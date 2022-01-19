@@ -16,7 +16,7 @@ Learning notes for DBiT-Notes
       ```
    3. Set up the environment on HPC
       - Follow the instruction of ST Pipeline https://github.com/jfnavarro/st_pipeline
-      - Current version
+      - Current procedure
       ```
       module load miniconda
       conda create -n st-pipeline python=3.7
@@ -26,6 +26,9 @@ Learning notes for DBiT-Notes
       conda install Cython
       pip install taggd
       pip install stpipeline
+      ```
+      - Test the installment
+      ```
       st_pipeline_run.py -h
       ```
    4. Make the index of the reference
