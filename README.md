@@ -32,3 +32,10 @@ Learning notes for DBiT-Notes
       st_pipeline_run.py -h
       ```
    4. Make the index of the reference
+
+
+## HPC Work Principle
+   1. Request for interactive job memory
+   ```
+   srun --pty -p interactive -c 1 --mem=6g bash
+   ```
