@@ -49,6 +49,9 @@ Learning notes for DBiT-Notes
       conda activate st-pipeline
       ```
       - _stpipeline.sh_ in /00.sh
+      ```
+      sbatch hC1.stpipeline.sh
+      ```
    4. Change ID using _hC.stpipeline.sh_
       - Run the _stpipeline.sh_ for samples.
 
