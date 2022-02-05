@@ -40,12 +40,11 @@ Learning notes for DBiT-Notes
    1. Make the index of the reference
       - Once it's settled up, no need to change unless there's new sample or new updates
         - Current version of human gene reference
-   2. Filter the raw data using _effective.sh_
+   2. Filter the raw data and rearrange read format to be compatible with ST Pipeline using _effective.sh_
       - Perl file is used for the processing, _1-effective.pl_
-   3. Rearrange read format to be compatible with ST Pipeline
-   4. Run st-pipeline
+   3. Run st-pipeline
       - _stpipeline.sh_ in /00.sh
-   5. Change ID using _hC.stpipeline.sh_
+   4. Change ID using _hC.stpipeline.sh_
       - Run the _stpipeline.sh_ for samples.
 
 ## Other stuffs
