@@ -42,12 +42,11 @@ Learning notes for DBiT-Notes
         - Current version of human gene reference
    2. Filter the raw data using _effective.sh_
       - Perl file is used for the processing, _1-effective.pl_
-   3. Rearrange read format to be compatible with st-pipeline
-      -
+   3. Rearrange read format to be compatible with ST Pipeline
    4. Run st-pipeline
       - _stpipeline.sh_ in /00.sh
-   5. change ID using _hC.stpipeline.sh_
-      -Run the _stpipeline.sh_ for samples.
+   5. Change ID using _hC.stpipeline.sh_
+      - Run the _stpipeline.sh_ for samples.
 
 ## Other stuffs
 ### HPC Work Commands
