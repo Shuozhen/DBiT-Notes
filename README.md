@@ -43,6 +43,11 @@ Learning notes for DBiT-Notes
    2. Filter the raw data and rearrange read format to be compatible with ST Pipeline using _effective.sh_
       - Perl file is used for the processing, _1-effective.pl_
    3. Run st-pipeline
+      - Remember to get into the miniconda environment
+      ```
+      module load miniconda
+      conda activate st-pipeline
+      ```
       - _stpipeline.sh_ in /00.sh
    4. Change ID using _hC.stpipeline.sh_
       - Run the _stpipeline.sh_ for samples.
