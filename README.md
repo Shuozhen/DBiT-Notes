@@ -52,8 +52,8 @@ Learning notes for DBiT-Notes
       ```
       sbatch hC1.stpipeline.sh
       ```
-   4. Change ID using _hC.stpipeline.sh_
-      - Run the _stpipeline.sh_ for samples.
+   4. Change ID using _changeid.sh_
+      - Run the _changeid.sh_ for samples.
 
 ## Other stuffs
 ### HPC Work Commands
