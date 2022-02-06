@@ -54,6 +54,12 @@ Learning notes for DBiT-Notes
       ```
    4. Change ID using _changeid.sh_
       - Run the _changeid.sh_ for samples.
+      ```
+      module load miniconda
+      conda activate st-pipeline
+      srun --pty -p interactive --mem=16g bash
+      sh changeid.sh
+      ```
 
 ## Other stuffs
 ### HPC Work Commands
