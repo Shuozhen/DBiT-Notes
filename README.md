@@ -36,17 +36,17 @@ Learning notes for DBiT-Notes
       ```
       st_pipeline_run.py -h
       ```
-   4. Set up Per environment on HPC
+   4. Set up Perl environment on HPC, and run _effective.sh_ afterwards
       ```
       wget https://cpan.metacpan.org/authors/id/N/NW/NWCLARK/PerlIO-gzip-0.20.tar.gz
+      module avail Perl
+      module load Perl/5.28.0-GCCcore-7.3.0
       tar -zxvf PerlIO-gzip-0.20.tar.gz 
       cd PerlIO-gzip-0.20/
       mkdir mybuild
       perl Makefile.PL PREFIX=/gpfs/ysm/project/fan/sb2723/01.Spatial_hCortex/00.bin/PerlIO-gzip-0.20/mybuild
       make
-      module avail Perl
-      module load Perl/5.28.0-GCCcore-7.3.0
-      export PERL5LIB=/gpfs/ysm/project/fan/sb2723/01.Spatial_hCortex/00.bin/PerlIO-gzip-0.20/mybuild/lib/perl5/site_perl/5.28.0/x86_64-linux-thread-multi:$PERL5LIB
+      make install
       ```
 ## HPC Data Processing
    1. Make the index of the reference
