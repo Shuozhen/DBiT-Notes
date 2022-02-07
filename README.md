@@ -67,3 +67,12 @@ Learning notes for DBiT-Notes
    ```
    srun --pty -p interactive -c 1 --mem=6g bash
    ```
+   2. search in the history
+
+   ```
+   history | grep interactive
+   ```
+   3. Substitute something in batch
+   ```
+   :%s/(original)/(replaced)/g
+   ```
