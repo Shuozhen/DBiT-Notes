@@ -76,3 +76,7 @@ Learning notes for DBiT-Notes
    ```
    :%s/(original)/(replaced)/g
    ```
+   4. Save history
+   ```
+   history > logxxx
+   ```
