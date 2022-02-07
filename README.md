@@ -19,7 +19,7 @@ Learning notes for DBiT-Notes
         ln -s /gpfs/ysm/project/fan/sb2723/01.Spatial_hCortex/01.rawdata/usftp21.novogene.com/raw_data/hC2
         ```
        - Uzip and zip the raw data from Novogene using _gzip.sh_
-   3. Set up the environment on HPC
+   3. Set up the ST Pipeline environment (conda) on HPC
       - Follow the instruction of ST Pipeline https://github.com/jfnavarro/st_pipeline
       - Current procedure
       ```
@@ -35,6 +35,19 @@ Learning notes for DBiT-Notes
       - Test the installment
       ```
       st_pipeline_run.py -h
+      ```
+   4. Set up Per environment on HPC
+      ```
+      wget https://cpan.metacpan.org/authors/id/N/NW/NWCLARK/PerlIO-gzip-0.20.tar.gz
+      tar -zxvf PerlIO-gzip-0.20.tar.gz 
+      cd PerlIO-gzip-0.20/
+      cd PerlIO-gzip-0.20/
+      mkdir mybuild
+      perl Makefile.PL PREFIX=/gpfs/ysm/project/fan/sb2723/01.Spatial_hCortex/00.bin/PerlIO-gzip-0.20/mybuild
+      make
+      module avail Perl
+      module load Perl/5.28.0-GCCcore-7.3.0
+      export PERL5LIB=/gpfs/ysm/project/fan/sb2723/01.Spatial_hCortex/00.bin/PerlIO-gzip-0.20/mybuild/lib/perl5/site_perl/5.28.0/x86_64-linux-thread-multi:$PERL5LIB
       ```
 ## HPC Data Processing
    1. Make the index of the reference
