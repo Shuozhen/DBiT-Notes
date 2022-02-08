@@ -44,6 +44,7 @@ Learning notes for DBiT-Notes
       tar -zxvf PerlIO-gzip-0.20.tar.gz 
       cd PerlIO-gzip-0.20/
       mkdir mybuild
+      cd ../
       perl Makefile.PL PREFIX=/gpfs/ysm/project/fan/sb2723/01.Spatial_hCortex/00.bin/PerlIO-gzip-0.20/mybuild
       make
       make install
