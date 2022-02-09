@@ -20,6 +20,11 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
         ```
        - Uzip and zip the raw data from Novogene using _gzip.sh_
    3. Set up the ST Pipeline environment (conda) on HPC
+      - Install X11
+        ```
+        launchctl load -w /Library/LaunchAgents/org.macosforge.xquartz.startx.plist
+        echo $DISPLAY
+        ```
       - Follow the instruction of ST Pipeline https://github.com/jfnavarro/st_pipeline
       - Current procedure
         ```
