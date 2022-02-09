@@ -60,7 +60,8 @@ Learning notes for DBiT-Notes
       module load miniconda
       conda activate st-pipeline
       ```
-      - _stpipeline.sh_ in /00.sh
+      - Run ST pipeline.
+        - _stpipeline.sh_ is in /00.sh, just run _hC1.stpipeline.sh_ because it's running the _stpipeline.sh_
       ```
       sbatch hC1.stpipeline.sh
       ```
