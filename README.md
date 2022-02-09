@@ -57,6 +57,8 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
         ```
         sbatch hC1.stpipeline.sh
         ```
+      - Cat the log file to paste the barcode A and B and barcode AB into the excel file named "Sample QC Overall"
+        - Calculate the Effective reads by barcodeAB/(Raw Reads/s)*100%
    3. Run st-pipeline
       - Remember to get into the miniconda environment
         ```
