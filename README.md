@@ -75,7 +75,7 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
         cut -f1 gencode.v39.annotation.gtf | uniq
         grep '>chr' hg38.fa
         ```
-        - The following needed to be changed
+        - The following in the _starindex.sh_ and _starindex_nc.sh_ needed to be changed
           - Make a directory of STARindex and set it as the genomeDir
           ```
           --genomeDir /gpfs/ysm/project/fan/sb2723/00.database/hg38/STARindex
@@ -93,7 +93,15 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
           ```
           --sjdbOverhang 149
           ```
-        
+          - The limit of genome generate RAM should be adjusted by the instruction (* double confirm with Mingyu)
+          ```
+          --limitGenomeGenerateRAM 50000000000
+          ```
+          - The directory should be changed to nc folder and the fasta files should also be changed.
+          ```
+          --genomeDir /gpfs/ysm/project/fan/sb2723/00.database/hg38/StarIndex_nc
+          --genomeFastaFiles /gpfs/ysm/project/fan/sb2723/00.database/hg38/Homo_sapiens.GRCh38.ncrna.fa
+          ```
    2. Filter the raw data and rearrange read format to be compatible with ST Pipeline using _effective.sh_
       - Perl file is used for the processing, _1-effective.pl_
         ```
@@ -128,6 +136,7 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
    4. Use the Matlab script _Pixel_identification.m_ to generate position information
 
 ## R scripts
+
 
 ## Other stuffs
 ### HPC Work Commands
