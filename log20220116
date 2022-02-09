@@ -1,0 +1,353 @@
+1  scp -r beng469_my393@farnam2.hpc.yale.edu:/gpfs/ysm/project/beng469/beng469_my393/Assignment2-SNV/scDNA_myeloid_data ~/Downloads/
+    2  quit()
+    3  module load miniconda
+    4  conda create -n dbit python=3.7 numpy scipy pandas matplotlib ipython jupyter seaborn
+    5  source activate dbit
+    6  pip install stpipeline
+    7  exit
+    8  ls -lrt
+    9  cd project
+   10  ls -lrt
+   11  mkdir 01.Spatial_hCortex_20220112
+   12  ls -lrt
+   13  cd 01.Spatial_hCortex_20220112/
+   14  cd ../
+   15  cd 01*
+   16  mkdir 01.rawdata
+   17  cd 01.rawdata/
+   18  cd ../
+   19  wget -r -c ftp://X202SC21122265-Z01-F001:md12xx3w@usftp21.novogene.com:21/
+   20  ls
+   21  cd ../
+   22  srun --x11 --pty -p interactive -c 1 --mem=6g bash
+   23  srun --pty -p interactive -c 1 --mem=6g bash
+   24  ls
+   25  cd 01.Spatial_hCortex_20220112/
+   26  ls
+   27  cd usftp21.novogene.com/
+   28  ls
+   29  cd raw_data/
+   30  ls
+   31  cd ../
+   32  launchctl load -w /Library/LaunchAgents/org.macosforge.xquartz.startx.plist
+   33  echo $DISPLAY
+   34  srun --x11 --pty -p interactive -c 1 --mem=6g bash
+   35  exit
+   36  srun --x11 --pty -p interactive -c 1 --mem=6g bash
+   37  squeue
+   38  srun --x11 --pty -c 1 --mem=6g bash
+   39  srun --x11 --pty -p interactive -c 1 --mem=6g bash
+   40  module load miniconda
+   41  conda activate st-pipeline
+   42  conda install -c bioconda star
+   43  conda install -c bioconda samtools openssl=1.0
+   44  st_pipeline_run.py -v
+   45  rsync -avzP rsync://hgdownload.cse.ucsc.edu/goldenPath/hg38/chromosomes/ .
+   46  ls
+   47  pwd
+   48  mkdir hg38
+   49  mv chr* hg38
+   50  ls
+   51  mv hg38 project/
+   52  rm -rf taggd/
+   53  cd project/
+   54  ls
+   55  mkdir 00.database
+   56  mv hg38 00.database/
+   57  cd 00.database/
+   58  cd hg38/
+   59  ls -lrt
+   60  rm chr*_*.fa.gz
+   61  ls
+   62  for i in {1..22} X Y M; do gzip -d chr$i.fa.gz;done
+   63  ls
+   64  for i in {1..22} X Y M; do cat chr$i.fa; done >> hg38.fa
+   65  for i in {1..22} X Y M; do rn chr$i.fa;done
+   66  for i in {1..22} X Y M; do rm chr$i.fa;done
+   67  ls
+   68  wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_39/gencode.v39.annotation.gtf.gz
+   69  wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_39/gencode.v39.annotation.gff3.gz
+   70  wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_39/gencode.v39.long_noncoding_RNAs.gtf.gz
+   71  wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_39/gencode.v39.long_noncoding_RNAs.gff3.gz
+   72  lis
+   73  ls
+   74  gzip -d gencode.v39.*
+   75  ls
+   76  less -S gencode.v39.annotation.gtf
+   77  wget http://ftp.ensembl.org/pub/release-105/fasta/homo_sapiens/
+   78  ls
+   79  rm index.html 
+   80  wget http://ftp.ensembl.org/pub/release-105/fasta/homo_sapiens/ncrna/Homo_sapiens.GRCh38.ncrna.fa.gz
+   81  ls -lrt
+   82  less -S Homo_sapiens.GRCh38.ncrna.fa.gz 
+   83  wget http://ftp.ensembl.org/pub/release-105/gtf/homo_sapiens/Homo_sapiens.GRCh38.105.gtf.gz
+   84  ls -lrt
+   85  less -S Homo_sapiens.GRCh38.105.gtf.gz
+   86  less -S Homo_sapiens.GRCh38.ncrna.fa.gz 
+   87  less -S Homo_sapiens.GRCh38.105.gtf.gz
+   88  ls -lrt
+   89  gzip -d Homo_sapiens.GRCh38.105.gtf.gz
+   90  ls -lrt
+   91  gzip -d  Homo_sapiens.GRCh38.ncrna.fa.gz
+   92  ls -lrt
+   93  rm -rf gencode.v39.long_noncoding_RNAs.gff3
+   94  rm -rf gencode.v39.annotation.gff3
+   95  ls -lrt
+   96  les hg38.fa 
+   97  less -S hg38.fa 
+   98  less -S Homo_sapiens.GRCh38.105.gtf
+   99  less -S gencode.v39.annotation.gtf
+  100  ls -lrt
+  101  pwd
+  102  cd 
+  103  ls -lrt
+  104  cd /gpfs/ysm/project/fan/sb2723
+  105  ls -lrt
+  106  cd 00.database/
+  107  ls -lrt
+  108  cd hg38/
+  109  ls -lrt
+  110  pwd
+  111  vi starindex.sh
+  112  ls -lrt
+  113  less -S Homo_sapiens.GRCh38.105.gtf
+  114  less -S gencode.v39.annotation.gtf
+  115  pwd
+  116  less -S Homo_sapiens.GRCh38.105.gtf
+  117  less hg38.fa
+  118  LLL
+  119  ls -lrt
+  120  cut -f1  Homo_sapiens.GRCh38.105.gtf | unique
+  121  cut -f1  Homo_sapiens.GRCh38.105.gtf | uniq
+  122  cut -f1 gencode.v39.annotation.gtf | uniq
+  123  grep '>chr' hg38.fa
+  124  pwd
+  125  vi starindex.sh 
+  126  cat starindex.sh 
+  127  mkdir STARindex
+  128  ls /gpfs/ysm/project/fan/sb2723/00.database/hg38/hg38.fa
+  129  ls /gpfs/ysm/project/fan/sb2723/00.database/hg38/gencode.v39.annotation.gtf
+  130  cd ..
+  131  ls
+  132  cd ../
+  133  LS
+  134  ls
+  135  cd 01.Spatial_hCortex_20220112/
+  136  ls
+  137  cd usftp21.novogene.com/
+  138  ls
+  139  cd raw_data/
+  140  ls
+  141  cd hC1/
+  142  ls
+  143  less -s  hC1_CKDL210027949-1a_H2YCKDSX3_L1_1.fq.gz
+  144  ls -lrt
+  145  cd
+  146  cd project/
+  147  ls -lrt
+  148  cd 00.database/
+  149  ls -lrt
+  150  cd hg38/
+  151  ls -lrt
+  152  cat starindex.sh 
+  153  vi starindex.sh 
+  154  STAR
+  155  vi starindex.sh
+  156  ls -lrt
+  157  sbatch starindex.sh 
+  158  squeue -u sb2723
+  159  ls -lrt
+  160  cat slurm-21720652.out
+  161  ls -lrt
+  162  cat starindex.sh 
+  163  ls -lrt
+  164  cat slurm-21720652.out
+  165  cat slurm-21720652.out 
+  166  quit
+  167  help
+  168  exit
+  169  srun --pty -p interactive -c 1 --mem=6g bash
+  170  ls
+  171  cd project/
+  172  ls
+  173  cd 00.database/
+  174  ls
+  175  cd ../
+  176  cd ./
+  177  cd 00.database/
+  178  cd hg38/
+  179  ls
+  180  cat slurm-21720652.out 
+  181  cd project/
+  182  cd 00.database/
+  183  cd hg38/
+  184  ls
+  185  vi starindex.sh 
+  186  sbatch starindex.sh 
+  187  ls
+  188  rm slurm-21720652.out
+  189  ls
+  190  cat slurm-21740733.out 
+  191  rm slurm-21740733.out 
+  192  module load miniconda
+  193  conda actvate stpipline
+  194  conda activate stpipline
+  195  conda activate stpipeline
+  196  conda activate st-pipeline
+  197  sbatch starindex.sh 
+  198  cat slurm-21740743.out 
+  199  module
+  200  module load miniconda
+  201  conda activate st-pipeline
+  202  ls
+  203  cd project/
+  204  cd 00.database/
+  205  cd hg38/
+  206  ls
+  207  cat slurm-21740743.out 
+  208  ls -lrt
+  209  cd STARindex
+  210  ls -lrt
+  211  cd ../
+  212  cd hg38/
+  213  ls
+  214  vi starindex_nc.sh
+  215  mkdir STARindex_nc
+  216  pwd
+  217  cd
+  218  ls
+  219  ls -lrt
+  220  cd /gpfs/ysm/project/fan/sb2723
+  221  ls
+  222  cd 00.database/
+  223  cd hg38/
+  224  pwd
+  225  vi starindex_nc.sh 
+  226  ls -lrt
+  227  vi starindex_nc.sh 
+  228  cat starindex.
+  229  cat starindex.sh 
+  230  vi starindex_nc.sh 
+  231  cat starindex_nc.sh 
+  232  vi starindex_nc.sh 
+  233  sbatch starindex_nc.sh 
+  234  history
+  235  ls
+  236  cat slurm-21742586.out 
+  237  vi starindex_nc.sh 
+  238  STAR --help
+  239  STAR --help| less -S
+  240  vi starindex_h
+  241  ls -lrt
+  242  vi starindex_nc.sh 
+  243  sbatch starindex_nc.sh 
+  244  ls -lrt
+  245  cat slurm-21742615.out
+  246  squeue
+  247  squeue sb2723
+  248  squeue -u sb2723
+  249  scancel 21742615
+  250  squeue -u sb2723
+  251  vi starindex_nc.sh 
+  252  ls -lrt
+  253  less -S Homo_sapiens.GRCh38.ncrna.fa
+  254  rm slurm-21740743.out 
+  255  rm slurm-21742586.out 
+  256  sbatch starindex_nc.sh 
+  257  ls -lrt
+  258  rm slurm-21742615.out
+  259  ls
+  260  cat slurm-21742638.out 
+  261  cd ../
+  262  pwd
+  263  ls -lrt
+  264  cd 01.Spatial_hCortex_20220112/
+  265  vi stpipeline.sh
+  266  cd ../
+  267  ls -lrt
+  268  cd ../../
+  269  ls -lrt
+  270  cd fan
+  271  ls -lrt
+  272  cd gs592/
+  273  ls -lrt
+  274  cd Database/
+  275  ls -lrt
+  276  cd ../
+  277  ls -lrt
+  278  find ./ -name *.txt
+  279  ls -lrt
+  280  cd 02_Spatial_Hippocampus_DG
+  281  ls -lrt
+  282  cd 00.s
+  283  cd 00.sh/
+  284  ls -lrt
+  285  cat 2-STpipeline.sh 
+  286  cd ../
+  287  cd sb2723/
+  288  ls -lrt
+  289  cd 01.Spatial_hCortex_20220112/
+  290  ls -lrt
+  291  vi stpipeline.sh 
+  292  pwd
+  293  cd ../
+  294  cd 00.database/
+  295  ls -lrt
+  296  cd hg38/
+  297  ls -lrt
+  298  history | grep wget
+  299  vi README
+  300  cd ../
+  301  ls -lrt
+  302  mv 01.Spatial_hCortex_20220112/ 01.Spatial_hCortex
+  303  ls -lrt
+  304  cd 01.Spatial_hCortex/
+  305  ls -lrt
+  306  vi stpipeline.sh 
+  307  cd ../00.database/
+  308  cp ../../gs592/Database/barcodes-AB.xls ./
+  309  ls -lrt
+  310  less -S barcodes-AB.xls 
+  311  ls -lrt
+  312  cd ../01.Spatial_hCortex/
+  313  ls -lrt
+  314  cat stpipeline.sh 
+  315  ls -lrt
+  316  cd 01.rawdata/
+  317  ls -lrt
+  318  cd ../
+  319  ls -lrt
+  320  cd usftp21.novogene.com/
+  321  LS -LRT
+  322  ls -lrt
+  323  cd raw_data/
+  324  ls -lrt
+  325  pwd
+  326  cd ../
+  327  cd 01.rawdata/
+  328  ln -s gpfs/ysm/project/fan/sb2723/01.Spatial_hCortex/usftp21.novogene.com/raw_data/hC1
+  329  ls -lrt
+  330  ln -s gpfs/ysm/project/fan/sb2723/01.Spatial_hCortex/usftp21.novogene.com/raw_data/hC2
+  331  cd hC1
+  332  ls -lrt
+  333  rm hC1
+  334  rm hC2
+  335  ln -s /gpfs/ysm/project/fan/sb2723/01.Spatial_hCortex/usftp21.novogene.com/raw_data/hC2
+  336  ln -s /gpfs/ysm/project/fan/sb2723/01.Spatial_hCortex/usftp21.novogene.com/raw_data/hC1
+  337  ls -lrt
+  338  cd hC1
+  339  ls -lrt
+  340  cd ../
+  341  ls -lrt
+  342  vi ~/.bashrc
+  343  exit
+  344  work
+  345  cd work
+  346  ls -lrt
+  347  vi ~/.bashrc
+  348  source ~/.bashrc
+  349  work
+  350  ls
+  351  ls -lrt
+  352  mkdir others
+  353  cd others
