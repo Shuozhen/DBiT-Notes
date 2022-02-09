@@ -75,7 +75,7 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
         cut -f1 gencode.v39.annotation.gtf | uniq
         grep '>chr' hg38.fa
         ```
-        - The following in the _starindex.sh_ and _starindex_nc.sh_ needed to be changed
+        - The following in the _starindex.sh_ and _starindex_nc.sh_ needed to be changed, and the sbatch both files
           - Make a directory of STARindex and set it as the genomeDir
           ```
           --genomeDir /gpfs/ysm/project/fan/sb2723/00.database/hg38/STARindex
