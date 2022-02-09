@@ -75,6 +75,25 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
         cut -f1 gencode.v39.annotation.gtf | uniq
         grep '>chr' hg38.fa
         ```
+        - The following needed to be changed
+          - Make a directory of STARindex and set it as the genomeDir
+          ```
+          --genomeDir /gpfs/ysm/project/fan/sb2723/00.database/hg38/STARindex
+          ```
+          - The genome fasta file is the one we combined last step
+          ```
+           --genomeFastaFiles /gpfs/ysm/project/fan/sb2723/00.database/hg38/hg38.fa
+          ```
+          - The annotation file should be coordinate with the genome fasta file
+            - The chromosome name should be chr* or numbers/X/Y only
+          ```
+          --sjdbGTFfile /gpfs/ysm/project/fan/sb2723/00.database/hg38/gencode.v39.annotation.gtf 
+          ```
+          - This line denotes the sequencing length, we're doing 150 here
+          ```
+          --sjdbOverhang 149
+          ```
+        
    2. Filter the raw data and rearrange read format to be compatible with ST Pipeline using _effective.sh_
       - Perl file is used for the processing, _1-effective.pl_
         ```
