@@ -1,5 +1,5 @@
 # DiBT-Notes
-Learning notes for DBiT-Notes
+Learning notes for DBiT-Notes, credit to Mingyu Yang.
 
 ## DBiT work flow
   1. Experiments on tissue samples;
