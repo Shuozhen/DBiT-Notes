@@ -81,21 +81,21 @@ Learning notes for DBiT-Notes
 ### HPC Work Commands
    1. Request for interactive job memory
    
-     ```
-     srun --pty -p interactive -c 1 --mem=6g bash
-     ```
+       ```
+       srun --pty -p interactive -c 1 --mem=6g bash
+       ```
    2. search in the history
      
-     ```
-     history | grep interactive
-     ```
+       ```
+       history | grep interactive
+       ```
    3. Substitute something in batch
      
-     ```
-     :%s/(original)/(replaced)/g
-     ```
+       ```
+       :%s/(original)/(replaced)/g
+       ```
    4. Save history
      
-     ```
-     history > logxxx
-     ```
+       ```
+       history > logxxx
+       ```
