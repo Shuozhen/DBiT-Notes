@@ -57,6 +57,24 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
    1. Make the index of the reference
       - Once it's settled up, no need to change unless there's new sample or new updates
         - Current version of human gene reference
+        - install the STAR and samtool to establish the reference database, better in a database folder
+        ```
+        module load miniconda
+        conda activate st-pipeline
+        conda install -c bioconda star
+        conda install -c bioconda samtools openssl=1.0
+        st_pipeline_run.py -v
+        rsync -avzP rsync://hgdownload.cse.ucsc.edu/goldenPath/hg38/chromosomes/ .
+        ```
+        - Unzip the annotation file and combine them into one, delete the original seperate files
+        ```
+        for i in {1..22} X Y M; do gzip -d chr$i.fa.gz;done
+        for i in {1..22} X Y M; do cat chr$i.fa; done >> hg38.fa
+        for i in {1..22} X Y M; do rm chr$i.fa;done
+        cut -f1  Homo_sapiens.GRCh38.105.gtf | uniq
+        cut -f1 gencode.v39.annotation.gtf | uniq
+        grep '>chr' hg38.fa
+        ```
    2. Filter the raw data and rearrange read format to be compatible with ST Pipeline using _effective.sh_
       - Perl file is used for the processing, _1-effective.pl_
         ```
