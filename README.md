@@ -78,6 +78,10 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
         srun --pty -p interactive --mem=16g bash
         sh changeid.sh
         ```
+## Raw Image Processing
+   1. Crop the image using PS
+   2. Use Image -> Adjustment ->  
+## R scripts
 
 ## Other stuffs
 ### HPC Work Commands
@@ -101,3 +105,8 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
        ```
        history > logxxx
        ```
+   5. Change the file permission
+      ```
+      chmod 755 -R STARindex_nc
+      ```
+      
