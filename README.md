@@ -83,9 +83,12 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
         srun --pty -p interactive --mem=16g bash
         sh changeid.sh
         ```
-## Raw Image Processing
+## Raw Image Processing https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel_identification.m
    1. Crop the image using PS
-   2. Use Image -> Adjustment ->  
+   2. Use Image -> Adjustment -> Threshold
+   3. Use Image -> Adjustment -> Invert
+   4. Use the Matlab script _Pixel_identification.m_ to generate position information
+
 ## R scripts
 
 ## Other stuffs
