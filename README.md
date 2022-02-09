@@ -14,7 +14,7 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
         ```
         wget -r -c ftpxxx
         ```
-       - Make shortcuts for the raw data folder if necessary, the folder name will be the same as hC2 (see examples)
+       - Make shortcuts for the raw data folder if necessary, the folder name will be the same as hC2
         ```
         ln -s /gpfs/ysm/project/fan/sb2723/01.Spatial_hCortex/01.rawdata/usftp21.novogene.com/raw_data/hC2
         ```
