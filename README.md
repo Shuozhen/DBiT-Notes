@@ -175,3 +175,6 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       ```
       vi $HOME/.bashrc
       ```
+      ```
+      vi ~/.bashrc
+      ```
