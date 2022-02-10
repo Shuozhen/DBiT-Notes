@@ -171,4 +171,7 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       ```
       chmod 755 -R STARindex_nc
       ```
-      
+   6. Environment setting and shortcuts
+      ```
+      vi ./~bashrc
+      ```
