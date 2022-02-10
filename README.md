@@ -173,5 +173,5 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       ```
    6. Environment setting and shortcuts
       ```
-      vi ./~bashrc
+      vi $HOME/.bashrc
       ```
