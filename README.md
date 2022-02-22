@@ -25,6 +25,8 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
         launchctl load -w /Library/LaunchAgents/org.macosforge.xquartz.startx.plist
         echo $DISPLAY
         ```
+        - Troubleshooting
+        https://unix.stackexchange.com/questions/121716/unable-to-open-x-server
       - Follow the instruction of ST Pipeline https://github.com/jfnavarro/st_pipeline
       - Current procedure
         ```
