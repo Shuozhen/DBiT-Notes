@@ -27,6 +27,7 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
         ```
         - Troubleshooting
         https://unix.stackexchange.com/questions/121716/unable-to-open-x-server
+        https://unix.stackexchange.com/questions/31283/error-in-r-unable-to-open-connection-to-x11
       - Follow the instruction of ST Pipeline https://github.com/jfnavarro/st_pipeline
       - Current procedure
         ```
