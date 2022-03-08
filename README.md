@@ -47,7 +47,7 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
    4. Set up Perl environment on HPC, and run _effective.sh_ afterwards
         ```
         wget https://cpan.metacpan.org/authors/id/N/NW/NWCLARK/PerlIO-gzip-0.20.tar.gz
-        module avail Perl
+        # module avail Perl
         module load Perl/5.28.0-GCCcore-7.3.0
         tar -zxvf PerlIO-gzip-0.20.tar.gz 
         cd PerlIO-gzip-0.20/
