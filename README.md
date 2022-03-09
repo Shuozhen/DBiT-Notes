@@ -248,3 +248,10 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       zcat hC2_CKDL210027950-1a_H2YCKDSX3_L1_2.fq.gz |  grep ACGCTCGA |les
       ```
    8. Upload and download file or folder to/from HPC
+      ```
+      cd ~/Desktop
+      scp sb2723@farnam.hpc.yale.edu:/gpfs/ysm/project/fan/sb2723/01.Spatial_hCortex/03.stpipeline/hC2/hC2.svg ./
+      ```
+      ```
+      scp -r download/upload_directory upload/download_directory
+      ```
