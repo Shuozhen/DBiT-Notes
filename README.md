@@ -235,14 +235,16 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       vi ~/.bashrc
       ```
    7. Quick preview of a compressed file 
-    ```
-    zcat hC2_CKDL210027950-1a_H2YCKDSX3_L1_2.fq.gz |les
-    ```
-    or
-    ```
-    less hC2_CKDL210027950-1a_H2YCKDSX3_L1_2.fq.gz
-    ```
+    
+      ```
+      zcat hC2_CKDL210027950-1a_H2YCKDSX3_L1_2.fq.gz |les
+      ```
+      or
+      ```
+      less hC2_CKDL210027950-1a_H2YCKDSX3_L1_2.fq.gz
+      ```
       - With searching function
       ```
       zcat hC2_CKDL210027950-1a_H2YCKDSX3_L1_2.fq.gz |  grep ACGCTCGA |les
       ```
+   8. Upload and download file or folder to/from HPC
