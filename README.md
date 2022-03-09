@@ -3,7 +3,7 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
 
 ## DBiT work flow
   1. Experiments on tissue samples;
-  - Sample thickness < 10 um;
+     - Sample thickness < 10 um;
      - 50 * 50 barcodes;
      - Extract the Sequences using Illumina kit;
   2. Sequencing by Novogene;
