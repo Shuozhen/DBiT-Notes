@@ -255,3 +255,8 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       ```
       scp -r download/upload_directory upload/download_directory
       ```
+   7. To check the capability of R
+      ```
+      R
+      capabilities()
+      ```
