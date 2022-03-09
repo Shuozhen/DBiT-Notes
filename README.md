@@ -257,6 +257,7 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       ```
    7. To check the capability of R
       ```
+      module load Rxxx
       R
       capabilities()
       ```
