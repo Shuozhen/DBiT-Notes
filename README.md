@@ -176,6 +176,9 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       perl -c qa.pl
       ```
       - Run the perl code
+      ```
+      perl ../../00.bin/qa.pl hC2_stdata.updated.tsv > hC2.svg
+      ```
 
 ## Imaging Analysis
 ### R scripts
@@ -221,7 +224,7 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       ```
       vi ~/.bashrc
       ```
-    7. Quick preview of a compressed file
+   7. Quick preview of a compressed file 
     ```
     zcat hC2_CKDL210027950-1a_H2YCKDSX3_L1_2.fq.gz |les
     ```
@@ -229,7 +232,7 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
     ```
     less hC2_CKDL210027950-1a_H2YCKDSX3_L1_2.fq.gz
     ```
-       - With searching function
-       ```
-       zcat hC2_CKDL210027950-1a_H2YCKDSX3_L1_2.fq.gz |  grep ACGCTCGA |les
-       ```
+      - With searching function
+      ```
+      zcat hC2_CKDL210027950-1a_H2YCKDSX3_L1_2.fq.gz |  grep ACGCTCGA |les
+      ```
