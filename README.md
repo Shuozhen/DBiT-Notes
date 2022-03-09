@@ -179,6 +179,16 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       ```
       perl ../../00.bin/qa.pl hC2_stdata.updated.tsv > hC2.svg
       ```
+   2. Use the _change-xy.pl_ to flip or rotate the _hC2_stdata.updated.tsv_ if necessary
+      - If the Perl has been loaded, skip this step
+      ```
+      module load Perl/5.28.0-GCCcore-7.3.0
+      ```
+      - Current _change-xy.pl_ can flip over the center of the x axe
+      ```
+      perl ../../00.bin/change-xy.pl hC2_stdata.updated.tsv > hC2_stdata.updated.flipped.tsv
+      ```
+      - Go ahead to generate the result with the updated tsv file
 
 ## Imaging Analysis
 ### R scripts
