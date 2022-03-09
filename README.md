@@ -56,6 +56,18 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
         make
         make install
         ```
+      - If there's a Perl package is missing, following the above steps to install
+        - Install the SVG environment
+        ```
+        module load Perl/5.28.0-GCCcore-7.3.0
+        wget https://cpan.metacpan.org/authors/id/M/MA/MANWAR/SVG-2.86.tar.gz
+        tar -zxvf SVG-2.86.tar.gz 
+        cd SVG-2.86/
+        mkdir mybuild
+        perl Makefile.PL PREFIX=/gpfs/ysm/project/fan/sb2723/01.Spatial_hCortex/00.bin/SVG-2.86/mybuild
+        make
+        make install
+        ```
 ## HPC Data Processing
    1. Make the index of the reference
       - Once it's settled up, no need to change unless there's new sample or new updates
@@ -139,13 +151,36 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
         sh changeid.sh
         ```
 ## Raw Image Processing 
+### Using PS
 https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel_identification.m
    1. Crop the image using PS
    2. Use Image -> Adjustment -> Threshold
    3. Use Image -> Adjustment -> Invert
    4. Use the Matlab script _Pixel_identification.m_ to generate position information
+### Using Ai and SVG
+   1. Use _qa.pl_ file to generate the SVG file (position information) of the original file
+      - Load the Perl environment first
+      ```
+      module load Perl/5.28.0-GCCcore-7.3.0
+      ```
+      - Make the file executable
+      ```
+      chmod 755 qa.pl
+      ```
+      or
+      ```
+      chmod +x qa.pl
+      ```
+      - Check the Perl syntax
+      ```
+      perl -c qa.pl
+      ```
+      - Run the perl code
 
-## R scripts
+## Imaging Analysis
+### R scripts
+
+### Python
 
 
 ## Other stuffs
@@ -174,6 +209,11 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       ```
       chmod 755 -R STARindex_nc
       ```
+      or
+      ```
+      chmod +x file.filetype
+      ```
+      -r is for folder
    6. Environment setting and shortcuts
       ```
       vi $HOME/.bashrc
@@ -181,3 +221,15 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       ```
       vi ~/.bashrc
       ```
+    7. Quick preview of a compressed file
+    ```
+    zcat hC2_CKDL210027950-1a_H2YCKDSX3_L1_2.fq.gz |les
+    ```
+    or
+    ```
+    less hC2_CKDL210027950-1a_H2YCKDSX3_L1_2.fq.gz
+    ```
+       - With searching function
+       ```
+       zcat hC2_CKDL210027950-1a_H2YCKDSX3_L1_2.fq.gz |  grep ACGCTCGA |les
+       ```
