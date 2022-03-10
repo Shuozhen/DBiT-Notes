@@ -195,6 +195,9 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
 
 ### Python
 
+## Trouble shooting
+   1. Use Spatialde to redo the clustering: https://github.com/Teichlab/SpatialDE
+      - Set up a new conda environment
 
 ## Other stuffs
 ### HPC Work Commands
