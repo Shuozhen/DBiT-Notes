@@ -87,6 +87,10 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
         st_pipeline_run.py -v
         rsync -avzP rsync://hgdownload.cse.ucsc.edu/goldenPath/hg38/chromosomes/ .
         ```
+        - Remove all the unknown and random chromosome files ChrUn.xxx.fa.gz
+        ```
+        rm chr*_*.fa.gz
+        ```
         - Unzip the annotation file and combine them into one, delete the original seperate files (not double confirmed)
         ```
         for i in {1..22} X Y M; do gzip -d chr$i.fa.gz;done
@@ -124,6 +128,17 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
           --genomeDir /gpfs/ysm/project/fan/sb2723/00.database/hg38/StarIndex_nc
           --genomeFastaFiles /gpfs/ysm/project/fan/sb2723/00.database/hg38/Homo_sapiens.GRCh38.ncrna.fa
           ```
+       - For mouse genome reference
+         - Current chromosome sequence source: http://hgdownload.soe.ucsc.edu/goldenPath/mm39/chromosomes/
+       ```
+       rsync -avzP rsync://hgdownload.cse.ucsc.edu/goldenPath/mm39/chromosomes/ .
+       ```
+       ```
+       rm chr*_*.fa.gz
+       for i in {1..19} X Y M; do gzip -d chr$i.fa.gz;done
+       for i in {1..19} X Y M; do cat chr$i.fa; done >> mm39.fa
+       for i in {1..19} X Y M; do rm chr$i.fa;done
+       ```
    2. Filter the raw data and rearrange read format to be compatible with ST Pipeline using _effective.sh_
       - Perl file is used for the processing, _1-effective.pl_
         ```
