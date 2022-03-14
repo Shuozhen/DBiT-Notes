@@ -139,6 +139,26 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
        for i in {1..19} X Y M; do cat chr$i.fa; done >> mm39.fa
        for i in {1..19} X Y M; do rm chr$i.fa;done
        ```
+         - Current annotation are from: https://useast.ensembl.org/Mus_musculus/Info/Index
+       ```
+       wget http://ftp.ensembl.org/pub/release-105/fasta/mus_musculus/ncrna/Mus_musculus.GRCm39.ncrna.fa.gz
+       wget http://ftp.ensembl.org/pub/release-105/gtf/mus_musculus/Mus_musculus.GRCm39.105.gtf.gz
+       gzip -d Mus_musculus.GRCm39.105.gtf.gz
+       gzip -d Mus_musculus.GRCm39.ncrna.fa.gz 
+       cut -f1 Mus_musculus.GRCm39.105.gtf | uniq
+       cut -f1 Mus_musculus.GRCm39.ncrna.fa | uniq
+       
+       % Following are the useful part
+       wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M28/gencode.vM28.annotation.gtf.gz
+       wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M28/gencode.vM28.long_noncoding_RNAs.gtf.gz
+       gzip -d gencode.vM28.annotation.gtf.gz 
+       gzip -d gencode.vM28.long_noncoding_RNAs.gtf.gz 
+       
+       /gpfs/ysm/project/fan/sb2723/00.database/mm39
+       
+       mkdir STARindex_nc
+       mkdir STARindex
+       ```
    2. Filter the raw data and rearrange read format to be compatible with ST Pipeline using _effective.sh_
       - Perl file is used for the processing, _1-effective.pl_
         ```
