@@ -185,6 +185,10 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
         srun --pty -p interactive --mem=16g bash
         sh changeid.sh
         ```
+   5. To check the data integrity
+   ```
+   for i in `ls */*.gz`;do md5sum $i;done
+   ```
 ## Raw Image Processing 
 ### Using PS
 https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel_identification.m
