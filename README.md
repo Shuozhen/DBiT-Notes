@@ -190,7 +190,7 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
    for i in `ls */*.gz`;do md5sum $i;done
    ```
    
-   6. Batch processing
+   6. Batch processing (log20220330)
    ```
    for i in `cat list2`;do echo "gzip /gpfs/ysm/project/fan/sb2723/00.Rawdata_backup/usftp21.novogene.com/raw_data/*/$i";done>>rezip3.sh 
    ```
