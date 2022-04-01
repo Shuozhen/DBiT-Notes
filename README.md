@@ -178,6 +178,10 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
         sbatch hC1.stpipeline.sh
         ```
    4. Change ID using _changeid.sh_
+      - Put the changeid.sh in the 03.stpipeline folder
+      ```
+      cp /gpfs/ysm/project/fan/sb2723/00.sh/changeid.sh ./
+      ```
       - Run the _changeid.sh_ for samples.
         ```
         module load miniconda
