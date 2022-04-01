@@ -194,6 +194,11 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
    ```
    for i in `cat list2`;do echo "gzip /gpfs/ysm/project/fan/sb2723/00.Rawdata_backup/usftp21.novogene.com/raw_data/*/$i";done>>rezip3.sh 
    ```
+   ```
+   module load miniconda
+   conda activate st-pipeline
+   sbatch submit.sh 00.batch_stpipeline
+   ```
 ## Raw Image Processing 
 ### Using PS
 https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel_identification.m
