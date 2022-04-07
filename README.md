@@ -311,9 +311,14 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       ```
       scp -r download/upload_directory upload/download_directory
       ```
-   7. To check the capability of R
+   7. R-related stuffs
+      - To check the capability of R
       ```
       module load Rxxx
       R
       capabilities()
+      ```
+      - To set the conda R environment
+      ```
+      conda create --name dbit_r
       ```
