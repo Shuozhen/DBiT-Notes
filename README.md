@@ -177,7 +177,7 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
         ```
         sbatch hC1.stpipeline.sh
         ```
-   4. Change ID using _changeid.sh_
+   4. Change ID using _changeid.sh_ and get the updated.tsv
       - Put the changeid.sh in the 03.stpipeline folder
       ```
       cp /gpfs/ysm/project/fan/sb2723/00.sh/changeid.sh ./
