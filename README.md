@@ -7,158 +7,161 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
      - 50 * 50 barcodes;
      - Extract the Sequences using Illumina kit;
   2. Sequencing by Novogene;
-     - Check the library QC report.
-       - Copy the ![image](https://user-images.githubusercontent.com/25277637/152657283-475b4575-fe49-41ac-8979-a2cfa375c31b.png) into the excel file named "Sample QC Overall"
-     - Batch download the data to HPC folder;
-       - Make new project folder and put raw data in it with a name of **0.raw_data**
+  3. Set up the ST Pipeline environment (conda) on HPC
+     - Install X11
+       ```
+       launchctl load -w /Library/LaunchAgents/org.macosforge.xquartz.startx.plist
+       echo $DISPLAY
+       ```
+       - Troubleshooting
+       https://unix.stackexchange.com/questions/121716/unable-to-open-x-server
+       https://unix.stackexchange.com/questions/31283/error-in-r-unable-to-open-connection-to-x11
+     - Follow the instruction of ST Pipeline https://github.com/jfnavarro/st_pipeline
+     - Current procedure
+       ```
+       module load miniconda
+       conda create -n st-pipeline python=3.7
+       conda activate st-pipeline
+       conda install PySam
+       conda install Numpy
+       conda install Cython
+       pip install taggd
+       pip install stpipeline
+       ```
+     - Test the installment
+       ```
+       st_pipeline_run.py -h
+       ```
+  4. Set up Perl environment on HPC, and run _effective.sh_ afterwards
+       ```
+       wget https://cpan.metacpan.org/authors/id/N/NW/NWCLARK/PerlIO-gzip-0.20.tar.gz
+       # module avail Perl
+       module load Perl/5.28.0-GCCcore-7.3.0
+       tar -zxvf PerlIO-gzip-0.20.tar.gz 
+       cd PerlIO-gzip-0.20/
+       mkdir mybuild
+       perl Makefile.PL PREFIX=/gpfs/ysm/project/fan/sb2723/01.Spatial_hCortex/00.bin/PerlIO-gzip-0.20/mybuild
+       make
+       make install
+       ```
+     - If there's a Perl package is missing, following the above steps to install
+       - Install the SVG environment
+       ```
+       module load Perl/5.28.0-GCCcore-7.3.0
+       wget https://cpan.metacpan.org/authors/id/M/MA/MANWAR/SVG-2.86.tar.gz
+       tar -zxvf SVG-2.86.tar.gz 
+       cd SVG-2.86/
+       mkdir mybuild
+       perl Makefile.PL PREFIX=/gpfs/ysm/project/fan/sb2723/01.Spatial_hCortex/00.bin/SVG-2.86/mybuild
+       make
+       make install
+       ```
+  5. Make the index of the reference on HPC
+     - Once it's settled up, no need to change unless there's new sample or new updates
+       - Current version of human gene reference
+       ```
+       wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_39/gencode.v39.annotation.gtf.gz
+       wget http://ftp.ensembl.org/pub/release-105/gtf/homo_sapiens/Homo_sapiens.GRCh38.105.gtf.gz
+       wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_39/gencode.v39.long_noncoding_RNAs.gtf.gz
+       wget http://ftp.ensembl.org/pub/release-105/fasta/homo_sapiens/ncrna/Homo_sapiens.GRCh38.ncrna.fa.gz
+       ```
+       - install the STAR and samtool to establish the reference database, better in a database folder
+       ```
+       module load miniconda
+       conda activate st-pipeline
+       conda install -c bioconda star
+       conda install -c bioconda samtools openssl=1.0
+       st_pipeline_run.py -v
+       rsync -avzP rsync://hgdownload.cse.ucsc.edu/goldenPath/hg38/chromosomes/ .
+       ```
+       - Remove all the unknown and random chromosome files ChrUn.xxx.fa.gz
+       ```
+       rm chr*_*.fa.gz
+       ```
+       - Unzip the annotation file and combine them into one, delete the original seperate files (not double confirmed)
+       ```
+       for i in {1..22} X Y M; do gzip -d chr$i.fa.gz;done
+       for i in {1..22} X Y M; do cat chr$i.fa; done >> hg38.fa
+       for i in {1..22} X Y M; do rm chr$i.fa;done
+       cut -f1  Homo_sapiens.GRCh38.105.gtf | uniq
+       cut -f1 gencode.v39.annotation.gtf | uniq
+       grep '>chr' hg38.fa
+       ```
+       - Make the directory of STARindex and STARindex_nc under the genome directory
+       - The following in the _starindex.sh_ and _starindex_nc.sh_ needed to be changed, and the sbatch both files, remember to request for the interactive nodes for the job
+         - Make a directory of STARindex and set it as the genomeDir
+         ```
+         --genomeDir /gpfs/ysm/project/fan/sb2723/00.database/hg38/STARindex
+         ```
+         - The genome fasta file is the one we combined last step
+         ```
+         --genomeFastaFiles /gpfs/ysm/project/fan/sb2723/00.database/hg38/hg38.fa
+         ```
+         - The annotation file should be coordinate with the genome fasta file
+           - The chromosome name should be chr* or numbers/X/Y only
+         ```
+         --sjdbGTFfile /gpfs/ysm/project/fan/sb2723/00.database/hg38/gencode.v39.annotation.gtf 
+         ```
+         - This line denotes the sequencing length, we're doing 150 here
+         ```
+         --sjdbOverhang 149
+         ```
+         - The limit of genome generate RAM should be adjusted by the instruction (* double confirm with Mingyu)
+         ```
+         --limitGenomeGenerateRAM 50000000000
+         ```
+         - The directory should be changed to nc folder and the fasta files should also be changed.
+         ```
+         --genomeDir /gpfs/ysm/project/fan/sb2723/00.database/hg38/StarIndex_nc
+         --genomeFastaFiles /gpfs/ysm/project/fan/sb2723/00.database/hg38/Homo_sapiens.GRCh38.ncrna.fa
+         ```
+      
+      - For mouse genome reference
+        - Current chromosome sequence source: http://hgdownload.soe.ucsc.edu/goldenPath/mm39/chromosomes/
+        ```
+        rsync -avzP rsync://hgdownload.cse.ucsc.edu/goldenPath/mm39/chromosomes/ .
+        ```
+        ```
+        rm chr*_*.fa.gz
+        for i in {1..19} X Y M; do gzip -d chr$i.fa.gz;done
+        for i in {1..19} X Y M; do cat chr$i.fa; done >> mm39.fa
+        for i in {1..19} X Y M; do rm chr$i.fa;done
+        ```
+        - Current annotation are from: https://useast.ensembl.org/Mus_musculus/Info/Index
+        ```
+        wget http://ftp.ensembl.org/pub/release-105/fasta/mus_musculus/ncrna/Mus_musculus.GRCm39.ncrna.fa.gz
+        wget http://ftp.ensembl.org/pub/release-105/gtf/mus_musculus/Mus_musculus.GRCm39.105.gtf.gz
+        gzip -d Mus_musculus.GRCm39.105.gtf.gz
+        gzip -d Mus_musculus.GRCm39.ncrna.fa.gz 
+        cut -f1 Mus_musculus.GRCm39.105.gtf | uniq
+        cut -f1 Mus_musculus.GRCm39.ncrna.fa | uniq
+       
+        % Following are the useful part
+        wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M28/gencode.vM28.annotation.gtf.gz
+        wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M28/gencode.vM28.long_noncoding_RNAs.gtf.gz
+        gzip -d gencode.vM28.annotation.gtf.gz 
+        gzip -d gencode.vM28.long_noncoding_RNAs.gtf.gz 
+       
+        /gpfs/ysm/project/fan/sb2723/00.database/mm39
+       
+        mkdir STARindex_nc
+        mkdir STARindex
+        ```
+        
+## HPC Data Processing
+   1. Get the Sequence result from Novogene
+      - Check the library QC report.
+        - Copy the ![image](https://user-images.githubusercontent.com/25277637/152657283-475b4575-fe49-41ac-8979-a2cfa375c31b.png) into the excel file named "Sample QC Overall"
+      - Batch download the data to HPC folder;
+        - Make new project folder and put raw data in it with a name of **0.raw_data**
         ```
         wget -r -c ftpxxx
         ```
-       - Make shortcuts for the raw data folder if necessary, the folder name will be the same as hC2
+        - Make shortcuts for the raw data folder if necessary, the folder name will be the same as hC2
         ```
         ln -s /gpfs/ysm/project/fan/sb2723/01.Spatial_hCortex/01.rawdata/usftp21.novogene.com/raw_data/hC2
         ```
-       - Uzip and zip the raw data from Novogene using _gzip.sh_
-   3. Set up the ST Pipeline environment (conda) on HPC
-      - Install X11
-        ```
-        launchctl load -w /Library/LaunchAgents/org.macosforge.xquartz.startx.plist
-        echo $DISPLAY
-        ```
-        - Troubleshooting
-        https://unix.stackexchange.com/questions/121716/unable-to-open-x-server
-        https://unix.stackexchange.com/questions/31283/error-in-r-unable-to-open-connection-to-x11
-      - Follow the instruction of ST Pipeline https://github.com/jfnavarro/st_pipeline
-      - Current procedure
-        ```
-        module load miniconda
-        conda create -n st-pipeline python=3.7
-        conda activate st-pipeline
-        conda install PySam
-        conda install Numpy
-        conda install Cython
-        pip install taggd
-        pip install stpipeline
-        ```
-      - Test the installment
-        ```
-        st_pipeline_run.py -h
-        ```
-   4. Set up Perl environment on HPC, and run _effective.sh_ afterwards
-        ```
-        wget https://cpan.metacpan.org/authors/id/N/NW/NWCLARK/PerlIO-gzip-0.20.tar.gz
-        # module avail Perl
-        module load Perl/5.28.0-GCCcore-7.3.0
-        tar -zxvf PerlIO-gzip-0.20.tar.gz 
-        cd PerlIO-gzip-0.20/
-        mkdir mybuild
-        perl Makefile.PL PREFIX=/gpfs/ysm/project/fan/sb2723/01.Spatial_hCortex/00.bin/PerlIO-gzip-0.20/mybuild
-        make
-        make install
-        ```
-      - If there's a Perl package is missing, following the above steps to install
-        - Install the SVG environment
-        ```
-        module load Perl/5.28.0-GCCcore-7.3.0
-        wget https://cpan.metacpan.org/authors/id/M/MA/MANWAR/SVG-2.86.tar.gz
-        tar -zxvf SVG-2.86.tar.gz 
-        cd SVG-2.86/
-        mkdir mybuild
-        perl Makefile.PL PREFIX=/gpfs/ysm/project/fan/sb2723/01.Spatial_hCortex/00.bin/SVG-2.86/mybuild
-        make
-        make install
-        ```
-## HPC Data Processing
-   1. Make the index of the reference
-      - Once it's settled up, no need to change unless there's new sample or new updates
-        - Current version of human gene reference
-        ```
-        wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_39/gencode.v39.annotation.gtf.gz
-        wget http://ftp.ensembl.org/pub/release-105/gtf/homo_sapiens/Homo_sapiens.GRCh38.105.gtf.gz
-        wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_39/gencode.v39.long_noncoding_RNAs.gtf.gz
-        wget http://ftp.ensembl.org/pub/release-105/fasta/homo_sapiens/ncrna/Homo_sapiens.GRCh38.ncrna.fa.gz
-        ```
-        - install the STAR and samtool to establish the reference database, better in a database folder
-        ```
-        module load miniconda
-        conda activate st-pipeline
-        conda install -c bioconda star
-        conda install -c bioconda samtools openssl=1.0
-        st_pipeline_run.py -v
-        rsync -avzP rsync://hgdownload.cse.ucsc.edu/goldenPath/hg38/chromosomes/ .
-        ```
-        - Remove all the unknown and random chromosome files ChrUn.xxx.fa.gz
-        ```
-        rm chr*_*.fa.gz
-        ```
-        - Unzip the annotation file and combine them into one, delete the original seperate files (not double confirmed)
-        ```
-        for i in {1..22} X Y M; do gzip -d chr$i.fa.gz;done
-        for i in {1..22} X Y M; do cat chr$i.fa; done >> hg38.fa
-        for i in {1..22} X Y M; do rm chr$i.fa;done
-        cut -f1  Homo_sapiens.GRCh38.105.gtf | uniq
-        cut -f1 gencode.v39.annotation.gtf | uniq
-        grep '>chr' hg38.fa
-        ```
-        - Make the directory of STARindex and STARindex_nc under the genome directory
-        - The following in the _starindex.sh_ and _starindex_nc.sh_ needed to be changed, and the sbatch both files, remember to request for the interactive nodes for the job
-          - Make a directory of STARindex and set it as the genomeDir
-          ```
-          --genomeDir /gpfs/ysm/project/fan/sb2723/00.database/hg38/STARindex
-          ```
-          - The genome fasta file is the one we combined last step
-          ```
-           --genomeFastaFiles /gpfs/ysm/project/fan/sb2723/00.database/hg38/hg38.fa
-          ```
-          - The annotation file should be coordinate with the genome fasta file
-            - The chromosome name should be chr* or numbers/X/Y only
-          ```
-          --sjdbGTFfile /gpfs/ysm/project/fan/sb2723/00.database/hg38/gencode.v39.annotation.gtf 
-          ```
-          - This line denotes the sequencing length, we're doing 150 here
-          ```
-          --sjdbOverhang 149
-          ```
-          - The limit of genome generate RAM should be adjusted by the instruction (* double confirm with Mingyu)
-          ```
-          --limitGenomeGenerateRAM 50000000000
-          ```
-          - The directory should be changed to nc folder and the fasta files should also be changed.
-          ```
-          --genomeDir /gpfs/ysm/project/fan/sb2723/00.database/hg38/StarIndex_nc
-          --genomeFastaFiles /gpfs/ysm/project/fan/sb2723/00.database/hg38/Homo_sapiens.GRCh38.ncrna.fa
-          ```
-       - For mouse genome reference
-         - Current chromosome sequence source: http://hgdownload.soe.ucsc.edu/goldenPath/mm39/chromosomes/
-       ```
-       rsync -avzP rsync://hgdownload.cse.ucsc.edu/goldenPath/mm39/chromosomes/ .
-       ```
-       ```
-       rm chr*_*.fa.gz
-       for i in {1..19} X Y M; do gzip -d chr$i.fa.gz;done
-       for i in {1..19} X Y M; do cat chr$i.fa; done >> mm39.fa
-       for i in {1..19} X Y M; do rm chr$i.fa;done
-       ```
-         - Current annotation are from: https://useast.ensembl.org/Mus_musculus/Info/Index
-       ```
-       wget http://ftp.ensembl.org/pub/release-105/fasta/mus_musculus/ncrna/Mus_musculus.GRCm39.ncrna.fa.gz
-       wget http://ftp.ensembl.org/pub/release-105/gtf/mus_musculus/Mus_musculus.GRCm39.105.gtf.gz
-       gzip -d Mus_musculus.GRCm39.105.gtf.gz
-       gzip -d Mus_musculus.GRCm39.ncrna.fa.gz 
-       cut -f1 Mus_musculus.GRCm39.105.gtf | uniq
-       cut -f1 Mus_musculus.GRCm39.ncrna.fa | uniq
-       
-       % Following are the useful part
-       wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M28/gencode.vM28.annotation.gtf.gz
-       wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M28/gencode.vM28.long_noncoding_RNAs.gtf.gz
-       gzip -d gencode.vM28.annotation.gtf.gz 
-       gzip -d gencode.vM28.long_noncoding_RNAs.gtf.gz 
-       
-       /gpfs/ysm/project/fan/sb2723/00.database/mm39
-       
-       mkdir STARindex_nc
-       mkdir STARindex
-       ```
+      - Uzip and zip the raw data from Novogene using _gzip.sh_
    2. Filter the raw data and rearrange read format to be compatible with ST Pipeline using _effective.sh_
       - Perl file is used for the processing, _1-effective.pl_
         ```
