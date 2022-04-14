@@ -186,12 +186,12 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
       cp /gpfs/ysm/project/fan/sb2723/00.sh/changeid.sh ./
       ```
       - Run the _changeid.sh_ for samples.
-        ```
-        module load miniconda
-        conda activate st-pipeline
-        srun --pty -p interactive --mem=16g bash
-        sh changeid.sh
-        ```
+      ```
+      module load miniconda
+      conda activate st-pipeline
+      srun --pty -p interactive --mem=16g bash
+      sh changeid.sh
+      ```
    5. To check the data integrity
    ```
    for i in `ls */*.gz`;do md5sum $i;done
