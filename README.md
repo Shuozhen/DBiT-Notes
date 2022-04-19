@@ -271,6 +271,7 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
      
        ```
        :%s/(original)/(replaced)/g
+       g/(original)/ s//(replaced)/g
        ```
    4. Save history
      
