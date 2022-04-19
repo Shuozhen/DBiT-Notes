@@ -332,4 +332,8 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       ```
       conda create --name dbit_r
       ```
-      - U
+      - Use the R server
+        - png issue: Add the following sentence at the beginning of the code, after the library loading
+      ```
+      options(bitmapType = 'cairo')
+      ```
