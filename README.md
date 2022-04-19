@@ -298,6 +298,7 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       ```
       ```
       vi ~/.bashrc
+      source ~/.bashrc
       ```
    7. Quick preview of a compressed file 
     
