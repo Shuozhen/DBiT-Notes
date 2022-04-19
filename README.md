@@ -328,7 +328,8 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       R
       capabilities()
       ```
-      - To set the conda R environment
+      - To set the conda R environment （do not use）
       ```
       conda create --name dbit_r
       ```
+      - U
