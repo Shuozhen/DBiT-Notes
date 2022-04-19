@@ -162,6 +162,11 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
         ln -s /gpfs/ysm/project/fan/sb2723/01.Spatial_hCortex/01.rawdata/usftp21.novogene.com/raw_data/hC2
         ```
       - Uzip and zip the raw data from Novogene using _gzip.sh_
+        - If it's batch processing, make sure whe doing gzip -d, the files are ending with .gz, while doing the rezip, the files are ending with .fq
+        ```
+        for i in `cat list20220419`;do echo "gzip -d /gpfs/ysm/project/fan/sb2723/00.Rawdata_backup/usftp21.novogene.com_hK_040722/raw_data/*/$i";done>>unzip3.sh
+        sbatch submit20220419.sh
+        ```
    2. Filter the raw data and rearrange read format to be compatible with ST Pipeline using _effective.sh_
       - Perl file is used for the processing, _1-effective.pl_
         ```
