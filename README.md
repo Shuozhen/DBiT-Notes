@@ -337,3 +337,12 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       ```
       options(bitmapType = 'cairo')
       ```
+   8. Check rRNA contamination, _fq2fa.pl_ under 00.bin folder
+      - Check read2 file, interrupt using ctrl C immediately (just run several seconds) and then check first 100 sequences
+      ```
+      module load Perl/5.28.0-GCCcore-7.3.0
+      perl /gpfs/ysm/project/fan/sb2723/00.bin/fq2fa.pl hK1.R2.fq.gz
+      ls -lrt
+      head -200 hK1.R2.fa
+      ```
+      - Copy the file to th
