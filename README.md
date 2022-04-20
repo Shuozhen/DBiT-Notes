@@ -345,4 +345,4 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       ls -lrt
       head -200 hK1.R2.fa
       ```
-      - Copy the file to th
+      - Copy the file to the website: https://blast.ncbi.nlm.nih.gov/Blast.cgi
