@@ -284,6 +284,8 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
      
        ```
        :%s/(original)/(replaced)/g
+       ```
+       ```
        g/(original)/ s//(replaced)/g
        ```
    4. Save history
@@ -338,7 +340,7 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       ```
       - To set the conda R environment （do not use）
       ```
-      conda create --name dbit_r
+      conda create --name dbit_r r-base r-essentials
       ```
       - Use the R server
         - png issue: Add the following sentence at the beginning of the code, after the library loading
