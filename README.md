@@ -147,7 +147,13 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
         mkdir STARindex_nc
         mkdir STARindex
         
-        srun 
+        module load miniconda
+        conda activate st-pipeline
+        srun --pty -p interactive -c 4 --mem=16g bash
+        
+        % change the pathway inside the file
+        sh starindex.sh
+        sh starindex_nc.sh
         ```
         
 ## HPC Data Processing
