@@ -194,11 +194,7 @@ Learning notes for DBiT, credit to Mingyu Yang https://github.com/MingyuYang-Yal
         sbatch hC1.stpipeline.sh
         ```
    4. Change ID using _changeid.sh_ and get the updated.tsv
-      - Put the changeid.sh in the 03.stpipeline folder
-      ```
-      cp /gpfs/ysm/project/fan/sb2723/00.sh/changeid.sh ./
-      ```
-      - Run the _changeid.sh_ for samples.
+      - Run the _changeid.sh_ for samples, the first parameter is sampleid and the second is the dirname 
       ```
       module load miniconda
       conda activate st-pipeline
