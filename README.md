@@ -337,27 +337,27 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       rm -ri dirname
       ```
   ### R-related stuffs
-      1. To check the capability of R
+   1. To check the capability of R
       ```
       module load Rxxx
       R
       capabilities()
       ```
-      2. To set the conda R environment （do not use）
+   2. To set the conda R environment （do not use）
       ```
       conda create --name dbit_r r-base r-essentials
       ```
-      3. Use the R server
-        - png issue: Add the following sentence at the beginning of the code, after the library loading
+   3. Use the R server
+      - png issue: Add the following sentence at the beginning of the code, after the library loading
       ```
       options(bitmapType = 'cairo')
       ```
    ### Check rRNA contamination, _fq2fa.pl_ under 00.bin folder
-      - Check read2 file, interrupt using ctrl C immediately (just run several seconds) and then check first 100 sequences
+   - Check read2 file, interrupt using ctrl C immediately (just run several seconds) and then check first 100 sequences
       ```
       module load Perl/5.28.0-GCCcore-7.3.0
       perl /gpfs/ysm/project/fan/sb2723/00.bin/fq2fa.pl hK1.R2.fq.gz
       ls -lrt
       head -200 hK1.R2.fa
       ```
-      - Copy the file to the website: https://blast.ncbi.nlm.nih.gov/Blast.cgi
+   - Copy the file to the website: https://blast.ncbi.nlm.nih.gov/Blast.cgi
