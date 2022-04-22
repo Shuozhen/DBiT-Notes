@@ -283,7 +283,7 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
    3. Substitute something in batch
      
        ```
-       :%s/(original)/(replaced)/g
+       %s/(original)/(replaced)/g
        ```
        ```
        g/(original)/ s//(replaced)/g
@@ -331,23 +331,28 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       ```
       scp -r download/upload_directory upload/download_directory
       ```
-   7. R-related stuffs
-      - To check the capability of R
+   9. Remove the file with double confirmation
+      ```
+      rm -i filename
+      rm -ri dirname
+      ```
+  ### R-related stuffs
+      1. To check the capability of R
       ```
       module load Rxxx
       R
       capabilities()
       ```
-      - To set the conda R environment （do not use）
+      2. To set the conda R environment （do not use）
       ```
       conda create --name dbit_r r-base r-essentials
       ```
-      - Use the R server
+      3. Use the R server
         - png issue: Add the following sentence at the beginning of the code, after the library loading
       ```
       options(bitmapType = 'cairo')
       ```
-   8. Check rRNA contamination, _fq2fa.pl_ under 00.bin folder
+   ### Check rRNA contamination, _fq2fa.pl_ under 00.bin folder
       - Check read2 file, interrupt using ctrl C immediately (just run several seconds) and then check first 100 sequences
       ```
       module load Perl/5.28.0-GCCcore-7.3.0
