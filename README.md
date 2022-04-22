@@ -1,5 +1,5 @@
 # DiBT-Notes
-Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYang-Yale/DBiT-seq.
+Learning notes for DBiT, credit to Mingyu Yang https://github.com/MingyuYang-Yale/DBiT-seq.
 
 ## DBiT work flow (don't redo this part unless to set up a new environment)
   1. Experiments on tissue samples;
