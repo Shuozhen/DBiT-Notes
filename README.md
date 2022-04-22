@@ -116,7 +116,7 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
          --genomeFastaFiles /gpfs/ysm/project/fan/sb2723/00.database/hg38/Homo_sapiens.GRCh38.ncrna.fa
          ```
       
-      - For mouse genome reference
+      - For mouse genome reference (whole work flow is doable)
         - Current chromosome sequence source: http://hgdownload.soe.ucsc.edu/goldenPath/mm39/chromosomes/
         ```
         rsync -avzP rsync://hgdownload.cse.ucsc.edu/goldenPath/mm39/chromosomes/ .
@@ -146,6 +146,8 @@ Learning notes for DBiT-Notes, credit to Mingyu Yang https://github.com/MingyuYa
        
         mkdir STARindex_nc
         mkdir STARindex
+        
+        srun 
         ```
         
 ## HPC Data Processing
