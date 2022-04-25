@@ -332,6 +332,11 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       rm -i filename
       rm -ri dirname
       ```
+      
+   10. Set line number in vi
+       ```
+       :set nu
+       ```
   ### R-related stuffs
    1. To check the capability of R
       ```
