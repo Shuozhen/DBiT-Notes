@@ -368,3 +368,13 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       head -200 hK1.R2.fa
       ```
    - Copy the file to the website: https://blast.ncbi.nlm.nih.gov/Blast.cgi
+
+## Log for Installment and environmental setting
+- 2022/05/04
+  - One of the human genome reference is not downloadable
+  ```
+  wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_39/gencode.v39.long_noncoding_RNAs.gtf.gz
+  ```
+  - bioconda samtools openssl=1.0 may have some issues
+  <img width="1436" alt="image" src="https://user-images.githubusercontent.com/25277637/166857426-88db1fd7-62e2-41d5-9a4e-83763da0de92.png">
+   
