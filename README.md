@@ -17,7 +17,7 @@ Learning notes for DBiT, credit to Mingyu Yang https://github.com/MingyuYang-Yal
        https://unix.stackexchange.com/questions/121716/unable-to-open-x-server
        https://unix.stackexchange.com/questions/31283/error-in-r-unable-to-open-connection-to-x11
      - Follow the instruction of ST Pipeline https://github.com/jfnavarro/st_pipeline
-     - Current procedure
+     - Current procedure (at least effective at 2022/05/04)
        ```
        module load miniconda
        conda create -n st-pipeline python=3.7
