@@ -1,7 +1,7 @@
 # DiBT-Notes
 Learning notes for DBiT, credit to Mingyu Yang https://github.com/MingyuYang-Yale/DBiT-seq.
 
-## DBiT work flow (don't redo this part unless to set up a new environment)
+## DBiT work flow (don't redo this part unless to set up a new environment, at least effective at 2022/05/04)
   1. Experiments on tissue samples;
      - Sample thickness < 10 um;
      - 50 * 50 barcodes;
@@ -17,7 +17,7 @@ Learning notes for DBiT, credit to Mingyu Yang https://github.com/MingyuYang-Yal
        https://unix.stackexchange.com/questions/121716/unable-to-open-x-server
        https://unix.stackexchange.com/questions/31283/error-in-r-unable-to-open-connection-to-x11
      - Follow the instruction of ST Pipeline https://github.com/jfnavarro/st_pipeline
-     - Current procedure (at least effective at 2022/05/04)
+     - Current procedure
        ```
        module load miniconda
        conda create -n st-pipeline python=3.7
