@@ -258,7 +258,7 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       perl /gpfs/ysm/project/fan/sb2723/00.bin/2-svgto.pl GBM220126B_1_stdata.updated.flipped.tsv position.txt > svg-pos.txt
       perl /gpfs/ysm/project/fan/sb2723/00.bin/3-select_under_tissue.pl svg-pos.txt GBM220126B_1_stdata.updated.flipped.tsv > GBM220126B_1_stdata.updated.flipped.aligned.tsv
       ```
-      - Use python to change the svg-pos.txt to old position.txt format if necessary
+      - Use python to change the svg-pos.txt to old position.txt format if necessary (https://blog.csdn.net/u013019701/article/details/104056898)
       - Go ahead to generate the result with the updated tsv file
 
 ## Imaging Analysis
