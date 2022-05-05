@@ -58,11 +58,11 @@ Learning notes for DBiT, credit to Mingyu Yang https://github.com/MingyuYang-Yal
        ```
   5. Make the index of the reference on HPC
      - Once it's settled up, no need to change unless there's new sample or new updates
-       - Current version of human gene reference
+       - Current version of human gene reference (same on Farnam and Ruddle)
        ```
        wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_39/gencode.v39.annotation.gtf.gz
        wget http://ftp.ensembl.org/pub/release-105/gtf/homo_sapiens/Homo_sapiens.GRCh38.105.gtf.gz
-       wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_39/gencode.v39.long_noncoding_RNAs.gtf.gz
+       % wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_39/gencode.v39.long_noncoding_RNAs.gtf.gz (not downloadable 2022/05/04)
        wget http://ftp.ensembl.org/pub/release-105/fasta/homo_sapiens/ncrna/Homo_sapiens.GRCh38.ncrna.fa.gz
        ```
        - install the STAR and samtool to establish the reference database, better in a database folder
