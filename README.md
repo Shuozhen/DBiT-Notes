@@ -244,7 +244,7 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       ```
       perl /gpfs/ysm/project/fan/sb2723/00.bin/qa.pl hC2_stdata.updated.tsv > hC2.svg
       ```
-   2. Use the _change-xy.pl_ to flip or rotate the _hC2_stdata.updated.tsv_ if necessary
+   2. Use the _change-xy.pl_ to flip or rotate the _hC2_stdata.updated.tsv_ if necessary (so far for my data, yes)
       - If the Perl has been loaded, skip this step
       ```
       module load Perl/5.28.0-GCCcore-7.3.0
@@ -252,6 +252,11 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       - Current _change-xy.pl_ can flip over the center of the x axe
       ```
       perl /gpfs/ysm/project/fan/sb2723/00.bin/change-xy.pl hC2_stdata.updated.tsv > hC2_stdata.updated.flipped.tsv
+      ```
+   3. Use the Perl to create position files using _2-svgto.pl_ & _3-select_under_tissue.pl_
+      ```
+      perl /gpfs/ysm/project/fan/sb2723/00.bin/2-svgto.pl GBM220126B_1_stdata.updated.flipped.tsv position.txt > svg-pos.txt
+      perl /gpfs/ysm/project/fan/sb2723/00.bin/3-select_under_tissue.pl svg-pos.txt GBM220126B_1_stdata.updated.flipped.tsv > GBM220126B_1_stdata.updated.flipped.aligned.tsv
       ```
       - Go ahead to generate the result with the updated tsv file
 
