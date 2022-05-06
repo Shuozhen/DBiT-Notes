@@ -367,6 +367,10 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       ls -lrt
       head -200 hK1.R2.fa
       ```
+     - To check with certain lines in the middle
+     ```
+     sed -n '20,30p' FAVI_636_0044.R2.fa
+     ```
    - Copy the file to the website: https://blast.ncbi.nlm.nih.gov/Blast.cgi
 
 ## Log for Installment and environmental setting
