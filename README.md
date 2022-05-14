@@ -175,7 +175,7 @@ Learning notes for DBiT, credit to Mingyu Yang https://github.com/MingyuYang-Yal
         for i in `cat list20220419`;do echo "gzip -d /gpfs/ysm/project/fan/sb2723/00.Rawdata_backup/usftp21.novogene.com_hK_040722/raw_data/*/$i";done>>unzip3.sh
         sbatch submit20220419.sh
         ```
-   2. Filter the raw data and rearrange read format to be compatible with ST Pipeline using _effective.sh_
+   2. Filter the raw data and rearrange read format to be compatible with ST Pipeline using _effective.sh_, the barcode file should be _barcode.xls_ in the folder.
       - Perl file is used for the processing, _1-effective.pl_
         ```
         sbatch effective.sh
