@@ -178,7 +178,7 @@ Learning notes for DBiT, credit to Mingyu Yang https://github.com/MingyuYang-Yal
    2. Filter the raw data and rearrange read format to be compatible with ST Pipeline using _effective.sh_
       - Perl file is used for the processing, _1-effective.pl_
         ```
-        sbatch hC1.stpipeline.sh
+        sbatch effective.sh
         ```
       - Cat the log file to paste the barcode A and B and barcode AB into the excel file named "Sample QC Overall"
         - Calculate the Effective reads by barcodeAB/(Raw Reads/s)*100%
