@@ -142,7 +142,7 @@ Learning notes for DBiT, credit to Mingyu Yang https://github.com/MingyuYang-Yal
         gzip -d gencode.vM28.annotation.gtf.gz 
         gzip -d gencode.vM28.long_noncoding_RNAs.gtf.gz 
        
-        /gpfs/ysm/project/fan/sb2723/00.database/mm39
+        cd /gpfs/ysm/project/fan/sb2723/00.database/mm39
        
         mkdir STARindex_nc
         mkdir STARindex
@@ -389,4 +389,20 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
   wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_40/gencode.v40.long_noncoding_RNAs.gtf.gz
   wget http://ftp.ensembl.org/pub/release-105/gtf/homo_sapiens/Homo_sapiens.GRCh38.105.gtf.gz
   wget http://ftp.ensembl.org/pub/release-105/fasta/homo_sapiens/ncrna/Homo_sapiens.GRCh38.ncrna.fa.gz
+  ```
+  
+- 2022/06/03
+  - Build the references using STAR
+  ```
+  cd /gpfs/ycga/project/fan/sb2723/00.database/mm39
+       
+  mkdir STARindex_nc
+  mkdir STARindex
+        
+  module load miniconda
+  conda activate st-pipeline
+        
+  % change the pathway inside the file g/ysm/ s//ycga/g
+  sbatch starindex.sh
+  sbatch starindex_nc.sh
   ```
