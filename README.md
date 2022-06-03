@@ -392,9 +392,9 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
   ```
   
 - 2022/06/03
-  - Build the references using STAR
+  - Build the human references using STAR
   ```
-  cd /gpfs/ycga/project/fan/sb2723/00.database/mm39
+  cd /gpfs/ycga/project/fan/sb2723/00.database/hg38
        
   mkdir STARindex_nc
   mkdir STARindex
@@ -402,7 +402,26 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
   module load miniconda
   conda activate st-pipeline
         
-  % change the pathway inside the file g/ysm/ s//ycga/g
+  % change the pathway inside the file: g/ysm/ s//ycga/g
+  sbatch starindex.sh
+  sbatch starindex_nc.sh
+  ```
+  - Build the mouse references from downloading
+  ```
+  cd /gpfs/ycga/project/fan/sb2723/00.database/mm39
+  
+  wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M28/gencode.vM28.annotation.gtf.gz
+  wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M28/gencode.vM28.long_noncoding_RNAs.gtf.gz
+  gzip -d gencode.vM28.annotation.gtf.gz 
+  gzip -d gencode.vM28.long_noncoding_RNAs.gtf.gz 
+
+  mkdir STARindex_nc
+  mkdir STARindex
+
+  module load miniconda
+  conda activate st-pipeline
+
+  % change the pathway inside the file: g/ysm/ s//ycga/g
   sbatch starindex.sh
   sbatch starindex_nc.sh
   ```
