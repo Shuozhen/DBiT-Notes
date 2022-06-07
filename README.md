@@ -382,8 +382,9 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
   - bioconda samtools openssl=1.0 may have some issues
   <img width="1436" alt="image" src="https://user-images.githubusercontent.com/25277637/166857426-88db1fd7-62e2-41d5-9a4e-83763da0de92.png">
   - Detele openssl=1.0 (2022/06/06)
+  
   ```
-  conda install -c bioconda samtools
+  conda install -c bioconda "samtools>=1.10"
   ```
   
 - 2022/05/09
