@@ -290,6 +290,10 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
        ```
        g/(original)/ s//(replaced)/g
        ```
+      - For large file, in command line
+       ```
+       sed 's/(original)/(replaced)/g' original.file > output.file
+       ```
    4. Save history
      
        ```
