@@ -188,7 +188,7 @@ Learning notes for DBiT, credit to Mingyu Yang https://github.com/MingyuYang-Yal
         module load miniconda
         conda activate st-pipeline
         ```
-      - Run ST pipeline.
+      - Run ST pipeline. The barcode files in the stpipeline.sh should be barcodes-AB.xls
         - _stpipeline.sh_ is in /00.sh, just run _hC1.stpipeline.sh_ because it's running the _stpipeline.sh_
         ```
         sbatch hC1.stpipeline.sh
