@@ -1,4 +1,4 @@
-# DiBT-Notes
+# DBiT-Notes
 Learning notes for DBiT, credit to Mingyu Yang https://github.com/MingyuYang-Yale/DBiT-seq.
 
 ## DBiT work flow (don't redo this part unless to set up a new environment, at least effective at 2022/05/04)
