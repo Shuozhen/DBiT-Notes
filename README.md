@@ -436,7 +436,7 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
   ```
   
   - 2022/07/22
-  Solve the samtool problem!! Install Pysam in the conda environment stpipeline
+  Solve the samtool problem!! Install Pysam in the conda environment stpipeline     https://github.com/SpatialTranscriptomicsResearch/st_pipeline/issues/119
   ```
   pip3 install 'pysam==0.15.4' --force-reinstall
   ```
