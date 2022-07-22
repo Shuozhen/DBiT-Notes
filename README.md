@@ -434,3 +434,9 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
   sbatch starindex.sh
   sbatch starindex_nc.sh
   ```
+  
+  - 2022/07/22
+  Solve the samtool problem!! Install Pysam in the conda environment stpipeline
+  ```
+  pip3 install 'pysam==0.15.4' --force-reinstall
+  ```
