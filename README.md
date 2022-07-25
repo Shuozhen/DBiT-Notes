@@ -1,6 +1,8 @@
 # DBiT-Notes
 Learning notes for DBiT, credit to Mingyu Yang https://github.com/MingyuYang-Yale/DBiT-seq.
 
+**High-Spatial-Resolution Multi-Omics Sequencing via Deterministic Barcoding in Tissue** https://doi.org/10.1016/j.cell.2020.10.026
+
 ## DBiT work flow (don't redo this part unless to set up a new environment, at least effective at 2022/05/04)
   1. Experiments on tissue samples;
      - Sample thickness < 10 um;
