@@ -447,3 +447,7 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
   ```
   find ./ -name *.pl
   ```
+  Generate test file
+  ```
+  zcat cDNA_GBM220415_CKDL220024579-1A_H7LYCDSX5_L1_1.fq.gz |head -10000 | gzip > test_1.fq.gz
+  ```
