@@ -442,3 +442,8 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
   ```
   pip3 install 'pysam==0.15.4' --force-reinstall
   ```
+  
+  - 2022/10/13
+  ```
+  find ./ -name *.pl
+  ```
