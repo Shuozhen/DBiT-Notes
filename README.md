@@ -451,3 +451,8 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
   ```
   zcat cDNA_GBM220415_CKDL220024579-1A_H7LYCDSX5_L1_1.fq.gz |head -10000 | gzip > test_1.fq.gz
   ```
+  Get the string in the 1-8 positions and look the barcodes up
+  ```
+  zcat GBM220413.R1.fq.gz | cut -b 1-8 > BC1
+  for i in `cat /gpfs/gibbs/pi/fan/sb2723/test/02.effective/test/barcode`;do cat BC1 | grep $i | wc -c; done>>BC1_c
+  ```
