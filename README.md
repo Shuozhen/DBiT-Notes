@@ -456,3 +456,8 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
   zcat GBM220413.R1.fq.gz | cut -b 1-8 > BC1
   for i in `cat /gpfs/gibbs/pi/fan/sb2723/test/02.effective/test/barcode`;do cat BC1 | grep $i | wc -c; done>>BC1_c
   ```
+  
+  - 2022/10/14
+  ```
+  nohup sh/gpfs/gibbs/pi/fan/sb2723/test/02.effective/test/run.sh &
+  ```
