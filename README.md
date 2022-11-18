@@ -461,3 +461,5 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
   ```
   nohup sh/gpfs/gibbs/pi/fan/sb2723/test/02.effective/test/run.sh &
   ```
+  - 2022/11/18
+    - Check https://github.com/grmsu/DBiT-start for the # 09/14/2022 notes to install Rmagic environment for conda R
