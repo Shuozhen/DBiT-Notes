@@ -437,13 +437,13 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
   sbatch starindex_nc.sh
   ```
   
-  - 2022/07/22
+- 2022/07/22
   Solve the samtool problem!! Install Pysam in the conda environment stpipeline     https://github.com/SpatialTranscriptomicsResearch/st_pipeline/issues/119
   ```
   pip3 install 'pysam==0.15.4' --force-reinstall
   ```
   
-  - 2022/10/13
+- 2022/10/13
   ```
   find ./ -name *.pl
   ```
@@ -457,9 +457,9 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
   for i in `cat /gpfs/gibbs/pi/fan/sb2723/test/02.effective/test/barcode`;do cat BC1 | grep $i | wc -c; done>>BC1_c
   ```
   
-  - 2022/10/14
+- 2022/10/14
   ```
   nohup sh/gpfs/gibbs/pi/fan/sb2723/test/02.effective/test/run.sh &
   ```
-  - 2022/11/18
-    - Check https://github.com/grmsu/DBiT-start for the # 09/14/2022 notes to install Rmagic environment for conda R
+- 2022/11/18
+  - Check https://github.com/grmsu/DBiT-start for the # 09/14/2022 notes to install Rmagic environment for conda R
