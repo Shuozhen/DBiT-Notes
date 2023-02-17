@@ -463,3 +463,17 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
   ```
 - 2022/11/18
   - Check https://github.com/grmsu/DBiT-start for the # 09/14/2022 notes to install Rmagic environment for conda R
+  
+- 2022/02/07
+ - Re-install the conda R on Ruddle using # 09/14/2022 notes in https://github.com/grmsu/DBiT-start
+ ```
+ mamba create -n ~env-name~ r-base=4.0 r-essentials r-raster r-rgdal python
+ conda activate ~env-name~
+ pip install magic-impute
+ ```
+ <img width="2560" alt="image" src="https://user-images.githubusercontent.com/25277637/219793180-6951af12-67cc-4c75-bc17-4dd5ab87fb5b.png">
+ ```
+ mamba install cmake r-devtools
+ ```
+ <img width="2560" alt="image" src="https://user-images.githubusercontent.com/25277637/219794369-507bbe34-5fea-49f8-8c73-e217ebf99bc0.png">
+
