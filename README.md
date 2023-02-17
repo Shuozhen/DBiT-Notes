@@ -463,8 +463,8 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
 - 2022/11/18
   - Check https://github.com/grmsu/DBiT-start for the # 09/14/2022 notes to install Rmagic environment for conda R
   
-- 2022/02/07
- - Re-install the conda R on Ruddle using # 09/14/2022 notes in https://github.com/grmsu/DBiT-start
+- 2023/02/07
+ - Re-install the conda R on Ruddle HPC using # 09/14/2022 notes in https://github.com/grmsu/DBiT-start
  ```
  mamba create -n ~env-name~ r-base=4.0 r-essentials r-raster r-rgdal python
  conda activate ~env-name~
@@ -475,4 +475,32 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
  mamba install cmake r-devtools
  ```
  <img width="2560" alt="image" src="https://user-images.githubusercontent.com/25277637/219794369-507bbe34-5fea-49f8-8c73-e217ebf99bc0.png">
-
+ - Install R magic using the source https://github.com/cran/Rmagic#installation, not doable in R interface
+   - Install the dependency reticulate first (using my memory to recall r-reticulate)
+ ```
+ mamba install r-reticulate
+ ```
+ ```
+ git clone https://github.com/KrishnaswamyLab/MAGIC
+ cd MAGIC/python
+ python setup.py install --user
+ cd ../Rmagic
+ R CMD INSTALL .
+ ```
+ - Unload miniconda and update the ycrc environment
+ ```
+ conda deactivate
+ module unload miniconda
+ ycrc_conda_env.sh update
+ ```
+ - install the packages in R, on ood-ruddle, request 4 CPUs 16GB each, rstudio 1.417
+ ```
+ install.packages("pacman")
+ ```
+ > R graphics engine version 15 is not supported by this version of RStudio. The Plots tab will be disabled until a newer version of RStudio is installed. 
+ ```
+ devtools::install_github("gadenbuie/rsthemes")
+ library(rsthemes)
+ rsthemes::install_rsthemes()
+ install.packages("BiocManager")
+ ```
