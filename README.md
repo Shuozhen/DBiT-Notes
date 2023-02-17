@@ -504,3 +504,9 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
  rsthemes::install_rsthemes()
  install.packages("BiocManager")
  ```
+ - Install clusterProfiler package
+ ```
+ packageurl <- "https://cran.r-project.org/src/contrib/Archive/rvcheck/rvcheck_0.1.8.tar.gz"
+ install.packages(packageurl, repos=NULL, type="source")
+ BiocManager::install("clusterProfiler")
+ ```
