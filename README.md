@@ -365,7 +365,7 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
       ```
       options(bitmapType = 'cairo')
       ```
-   ### Check rRNA contamination, _fq2fa.pl_ under 00.bin folder
+   ### Quick check rRNA contamination, _fq2fa.pl_ under 00.bin folder
    - Check read2 file, interrupt using ctrl C immediately (just run several seconds) and then check first 100 sequences
       ```
       module load Perl/5.28.0-GCCcore-7.3.0
@@ -386,7 +386,6 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
   wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_39/gencode.v39.long_noncoding_RNAs.gtf.gz
   ```
   - bioconda samtools openssl=1.0 may have some issues
-  <img width="1436" alt="image" src="https://user-images.githubusercontent.com/25277637/166857426-88db1fd7-62e2-41d5-9a4e-83763da0de92.png">
   - Detele openssl=1.0 (2022/06/06)
   
   ```
