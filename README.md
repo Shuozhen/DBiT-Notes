@@ -520,3 +520,5 @@ install.packages("/gpfs/ycaga/project/fan/sb2723/00.software/seurat.tar.gz",repo
 ```
 - Somehow the clusterProfiler was not installed correctly
 Reinstall lead to the biocmanager upgrade, unknown factor
+raster is not be able to be loaded because 
+```configure: error: GDALAllRegister not found in libgdal```
