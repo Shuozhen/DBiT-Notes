@@ -518,7 +518,12 @@ install.packages("imager")
 install.packages("/gpfs/ycga/project/fan/sb2723/00.software/spatstat.core_2.4-4.tar.gz",repos=NULL, type = "source")
 install.packages("/gpfs/ycga/project/fan/sb2723/00.software/seurat.tar.gz",repos=NULL, type = "source")
 ```
-- Somehow the clusterProfiler was not installed correctly
-Reinstall lead to the biocmanager upgrade, unknown factor
-raster is not be able to be loaded because 
+ - Somehow the clusterProfiler was not installed correctly
+ Reinstall lead to the biocmanager upgrade, unknown factor
+ raster is not be able to be loaded because 
 ```configure: error: GDALAllRegister not found in libgdal```
+ - Install jamba
+ ```
+ install.packages("remotes")
+ remotes::install_github("jmw86069/jamba")
+ ```
