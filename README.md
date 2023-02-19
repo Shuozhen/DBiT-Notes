@@ -510,3 +510,13 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
  install.packages(packageurl, repos=NULL, type="source")
  BiocManager::install("clusterProfiler")
  ```
+ 
+20230219
+- Install R packages - to install old version of seurat
+```
+install.packages("imager")
+install.packages("/gpfs/ycaga/project/fan/sb2723/00.software/spatstat.core_2.4-4.tar.gz",repos=NULL, type = "source")
+
+```
+- Somehow the clusterProfiler was not installed correctly
+Reinstall lead to the biocmanager upgrade, unknown factor
