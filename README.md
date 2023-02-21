@@ -538,7 +538,7 @@ install.packages("/gpfs/ycga/project/fan/sb2723/00.software/seurat.tar.gz",repos
    touch .Renviron
    vi .Renviron 
    ```
-   - In vim, delete the original wrong pathway and add following sentence
+   - In vim, delete the original wrong pathway and add following sentence, and restart the ood, it worked!!
    ```
    RETICULATE_PYTHON=/gpfs/ycga/project/fan/sb2723/conda_envs/R_env/bin/python
    ```
