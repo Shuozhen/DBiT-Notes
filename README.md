@@ -527,3 +527,18 @@ install.packages("/gpfs/ycga/project/fan/sb2723/00.software/seurat.tar.gz",repos
  install.packages("remotes")
  remotes::install_github("jmw86069/jamba")
  ```
+ 
+ 20230221
+ - Solve the Rmagic issue
+ Could not find the python module magic all the time!
+ The python R reticulated was wrong version, so Graham helped changed the file PATH
+   - In command line
+   ```
+   cd 
+   touch .Renviron
+   vi .Renviron 
+   ```
+   - In vim, delete the original wrong pathway and add following sentence
+   ```
+   RETICULATE_PYTHON=/gpfs/ycga/project/fan/sb2723/conda_envs/R_env/bin/python
+   ```
