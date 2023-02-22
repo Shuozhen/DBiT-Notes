@@ -528,6 +528,15 @@ install.packages("/gpfs/ycga/project/fan/sb2723/00.software/seurat.tar.gz",repos
  remotes::install_github("jmw86069/jamba")
  ```
  
+ 20230220
+ - Compared the ST-Pipeline issue with Mingyu
+   - Soft-clipping made the difference, to compare the the ratio of soft clipping
+   ```
+   module load SAMtools
+   samtools view mapped.bam | cut -f6 | grep 'S' | wc -l
+   samtools view mapped.bam | wc -l
+   ```
+ 
  20230221
  - Solve the Rmagic issue
  Could not find the python module magic all the time!
@@ -542,3 +551,11 @@ install.packages("/gpfs/ycga/project/fan/sb2723/00.software/seurat.tar.gz",repos
    ```
    RETICULATE_PYTHON=/gpfs/ycga/project/fan/sb2723/conda_envs/R_env/bin/python
    ```
+   
+ - To save and read seurat object
+ ```
+ saveRDS(samp2,paste0(dir_out,sample,"_samp2.rds"))
+ ```
+ ```
+ saveRDS(samp2,paste0(dir_out,sample,"_samp2.rds"))
+ ```
