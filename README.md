@@ -157,6 +157,38 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
         sh starindex.sh
         sh starindex_nc.sh
         ```
+      - For Bovine genome reference (2023/06/13), need to double check
+        - Current Bovine genome (UCSC https://hgdownload.soe.ucsc.edu/goldenPath/bosTau9/bigZips/)
+        ```
+        wget http://ftp.ensembl.org/pub/release-109/fasta/bos_taurus/cdna/Bos_taurus.ARS-UCD1.2.cdna.all.fa.gz
+        wget https://hgdownload.soe.ucsc.edu/goldenPath/bosTau9/bigZips/bosTau9.fa.gz
+        wget http://ftp.ensembl.org/pub/release-109/fasta/bos_taurus/ncrna/Bos_taurus.ARS-UCD1.2.ncrna.fa.gz
+        gzip -d Bos_taurus.ARS-UCD1.2.cdna.all.fa.gz
+        gzip -d bosTau9.fa.gz
+        gzip -d gzip -d Bos_taurus.ARS-UCD1.2.ncrna.fa.gz
+        ```
+        - Current annotations (Ensembl release 109)
+        ```
+        wget http://ftp.ensembl.org/pub/release-109/gtf/bos_taurus/Bos_taurus.ARS-UCD1.2.109.chr.gtf.gz
+        wget http://ftp.ensembl.org/pub/release-109/gtf/bos_taurus/Bos_taurus.ARS-UCD1.2.109.abinitio.gtf.gz
+        gzip -d Bos_taurus.ARS-UCD1.2.109.chr.gtf.gz
+        awk '{if($1 !~ /^#/){$1="chr"$1}; print}' Bos_taurus.ARS-UCD1.2.109.chr.gtf > Bos_taurus.ARS-UCD1.2.109.gtf
+        rm Bos_taurus.ARS-UCD1.2.109.chr.gtf
+        mv Bos_taurus.ARS-UCD1.2.109.gtf Bos_taurus.ARS-UCD1.2.109.chr.gtf
+        ```
+        - STAR, McCleary is a little different than previous node
+        ```
+        cd /gpfs/gibbs/project/fan/sb2723/00.database/RNA/UCD1.2
+        mkdir STARindex_nc
+        mkdir STARindex
+        
+        conda activate st-pipeline
+        salloc -c 4 --mem=16g bash
+        
+        % change the pathway and the partition info inside the files
+        sh starindex.sh
+        sh starindex_nc.sh
+        ```
         
 ## HPC Data Processing
    1. Get the Sequence result from Novogene
