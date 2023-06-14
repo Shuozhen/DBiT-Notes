@@ -157,7 +157,7 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
         sh starindex.sh
         sh starindex_nc.sh
         ```
-      - For Bovine genome reference (2023/06/13), need to double check
+      - For Bovine genome reference (2023/06/13), need to double check, did not remove the ChrUN* in the .fa file
         - Current Bovine genome (UCSC https://hgdownload.soe.ucsc.edu/goldenPath/bosTau9/bigZips/)
         ```
         wget http://ftp.ensembl.org/pub/release-109/fasta/bos_taurus/cdna/Bos_taurus.ARS-UCD1.2.cdna.all.fa.gz
