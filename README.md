@@ -186,8 +186,8 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
         salloc -c 4 --mem=16g bash
         
         % change the pathway and the partition info inside the files
-        sh starindex.sh
-        sh starindex_nc.sh
+        sbatch starindex.sh
+        sbatch starindex_nc.sh
         ```
         
 ## HPC Data Processing
