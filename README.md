@@ -1,5 +1,5 @@
 # DBiT-Notes
-Learning notes for DBiT, credit to Mingyu Yang https://github.com/MingyuYang-Yale/DBiT-seq.
+Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang-Yale/DBiT-seq.
 
 **High-Spatial-Resolution Multi-Omics Sequencing via Deterministic Barcoding in Tissue** https://doi.org/10.1016/j.cell.2020.10.026
 
