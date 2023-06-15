@@ -172,6 +172,7 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
         wget http://ftp.ensembl.org/pub/release-109/gtf/bos_taurus/Bos_taurus.ARS-UCD1.2.109.chr.gtf.gz
         wget http://ftp.ensembl.org/pub/release-109/gtf/bos_taurus/Bos_taurus.ARS-UCD1.2.109.abinitio.gtf.gz
         gzip -d Bos_taurus.ARS-UCD1.2.109.chr.gtf.gz
+        # Add chr before each chromatin
         awk '{if($1 !~ /^#/){$1="chr"$1}; print}' Bos_taurus.ARS-UCD1.2.109.chr.gtf > Bos_taurus.ARS-UCD1.2.109.gtf
         rm Bos_taurus.ARS-UCD1.2.109.chr.gtf
         mv Bos_taurus.ARS-UCD1.2.109.gtf Bos_taurus.ARS-UCD1.2.109.chr.gtf
@@ -189,7 +190,22 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
         sbatch starindex.sh
         sbatch starindex_nc.sh
         ```
-        
+        - STAR is generated successfully but the STAR mapping is out of memory
+          - Trouble shooting
+          ```
+          cut -f1  Bos_taurus.ARS-UCD1.2.109.chr.gtf | uniq
+          ```
+          The return data is not the chromatin numbers, try to change the space to tab
+          ```
+          sed 's/\ /\t/g' Bos_taurus.ARS-UCD1.2.109.chr.gtf > Bos_taurus.ARS-UCD1.2.109.chr_1.gtf
+          ```
+          It at least matched results of doing the same steps for human genome after checking the uniq first column
+          It turns out that there's no annotations for Unknown chromasome, try to get rid of those from the original genome .fa files
+          ```
+          perl -ne 'BEGIN{$/=">"} print $_ unless ($_ eq "" || /chrUn/); END{$/="\n"}' bosTau9.fa > bosTau9_noUn.fa
+          ```
+          Delete the original two folders for STARindex and STARindex_nc and rebuild the STAR using bosTau9_noUn.fa and Bos_taurus.ARS-UCD1.2.109.chr.gtf
+          
 ## HPC Data Processing
    1. Get the Sequence result from Novogene
       - Check the library QC report.
