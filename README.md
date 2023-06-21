@@ -330,7 +330,15 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
   install.packages("BiocManager")
   install.packages("Rmagic")
   devtools::install_github("gadenbuie/rsthemes")
-  
+  packages <- c(
+  "rmdformats", "Seurat", "ggplot2", "patchwork", "dplyr", 
+  "magrittr", "data.table", "OpenImageR", "grid", "utils", 
+  "gridExtra", "tidyr", "raster", "ggpubr", "BuenColors", 
+  "yarrr", "plyr", "knitr", "imager", "viridis", 
+  "kableExtra", "tibble", "DOSE", "STdeconvolve"
+)
+  install.packages(packages)
+  BiocManager::install(c("org.Hs.eg.db", "clusterProfiler", "org.Mm.eg.db", "enrichplot"))
   ```
 
 ### Python
