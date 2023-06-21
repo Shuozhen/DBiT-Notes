@@ -313,6 +313,25 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
 
 ## Imaging Analysis
 ### R scripts
+- Install conda R environment and the R studio environment on HPC (refer to github)
+  ```
+  salloc -c 4 --mem=16g bash
+  mamba create -n R_env_4.2 r-base=4.2 r-essentials r-raster r-rgdal python
+  conda activate R_env_4.2
+  mamba install magic
+  pip install magic-impute
+  mamba install cmake
+  mamba install r-devtools
+  mamba install r-reticulate
+  ```
+- Install the packages in R
+  ```
+  install.packages("pacman")
+  install.packages("BiocManager")
+  install.packages("Rmagic")
+  devtools::install_github("gadenbuie/rsthemes")
+  
+  ```
 
 ### Python
 
