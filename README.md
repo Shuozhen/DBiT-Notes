@@ -322,12 +322,12 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
   pip install magic-impute
   mamba install cmake
   mamba install r-devtools
-  mamba install r-reticulate
   ```
 - Install the packages in R
   ```
   install.packages("pacman")
   install.packages("BiocManager")
+  install.packages("reticulate")
   install.packages("Rmagic")
   devtools::install_github("gadenbuie/rsthemes")
   packages <- c(
