@@ -345,6 +345,10 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
   remotes::install_github('JEFworks-Lab/STdeconvolve')
   reticulate::py_install("magic")
   ```
+- To use Rmagic we need to use the correct python environment (which is under current conda environment)
+```
+reticulate::use_python("/path/to/python")
+```
 
 ### Python
 
