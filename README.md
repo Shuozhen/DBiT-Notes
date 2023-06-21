@@ -338,6 +338,9 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
   "kableExtra", "tibble", "DOSE", "STdeconvolve"
 )
   install.packages(packages)
+  # Replace the seurat
+  install.packages("YOURPATH/spatstat.core_1.65-0.tar.gz")
+  install.packages("YOURPATH/seurat.tar.gz")
   BiocManager::install(c("org.Hs.eg.db", "clusterProfiler", "org.Mm.eg.db", "enrichplot"))
   remotes::install_github('JEFworks-Lab/STdeconvolve')
   ```
