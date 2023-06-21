@@ -339,6 +339,7 @@ https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel
 )
   install.packages(packages)
   BiocManager::install(c("org.Hs.eg.db", "clusterProfiler", "org.Mm.eg.db", "enrichplot"))
+  remotes::install_github('JEFworks-Lab/STdeconvolve')
   ```
 
 ### Python
