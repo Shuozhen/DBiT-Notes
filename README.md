@@ -202,7 +202,7 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
           It at least matched results of doing the same steps for human genome after checking the uniq first column
           It turns out that there's no annotations for Unknown chromasome, try to get rid of those from the original genome .gtf files
           ```
-          perl -ne 'BEGIN{$/=">"} print $_ unless ($_ eq "" || /chrUn/); END{$/="\n"}' Bos_taurus.ARS-UCD1.2.109.chr.gtf > Bos_taurus.ARS-UCD1.2.109.chr_1.gtf
+          perl -ne 'BEGIN{$/=">"} print $_ unless ($_ eq "" || /chrUn/); END{$/="\n"}' bosTau9.fa > bosTau9noUN.fa
           ```
           Delete the original two folders for STARindex and STARindex_nc and rebuild the STAR using bosTau9_noUn.fa and Bos_taurus.ARS-UCD1.2.109.chr.gtf
         - Still not running well, change the genome file to Bos_taurus.ARS-UCD1.2.dna.toplevel.fa
