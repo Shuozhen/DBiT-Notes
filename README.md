@@ -210,7 +210,7 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
         - Use the UCSC paired annotation and raw data
           - gtf file is inside the gene/ folder
           - Use the bosTau9.refGene.gtf
-          - Use the 
+          - Use the bosTau9.fa
         - Get rid of the unknown genes in fasta file and gtf file and check
           ```
           perl -ne 'BEGIN{$/=">"} print $_ unless ($_ eq "" || /chrUn/); END{$/="\n"}' bosTau9.fa > bosTau9noUN.fa
