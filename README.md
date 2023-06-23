@@ -206,6 +206,46 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
           ```
           Delete the original two folders for STARindex and STARindex_nc and rebuild the STAR using bosTau9_noUn.fa and Bos_taurus.ARS-UCD1.2.109.chr.gtf
         - Still not running well, change the genome file to Bos_taurus.ARS-UCD1.2.dna.toplevel.fa
+      - Still not going well, after consult with Mingyu, here's the takeaway
+        - Use the UCSC paired annotation and raw data
+          - gtf file is inside the gene/ folder
+          - Use the bosTau9.refGene.gtf
+          - Use the 
+        - Get rid of the unknown genes in fasta file and gtf file and check
+          ```
+          perl -ne 'BEGIN{$/=">"} print $_ unless ($_ eq "" || /chrUn/); END{$/="\n"}' bosTau9.fa > bosTau9noUN.fa
+          grep '>' bosTau9noUN.fa
+          grep -v "^chrUn" bosTau9.refGene.gtf > bosTau9.refGene_noUN.gtf
+          cut -f1 bosTau9.refGene_noUN.gtf | uniq
+          ```
+        - Change the sequence of the annotation file and fasta file and make them consistent (Very important!!!!!!!!!!!)
+          ```
+          vi sort_squence.py
+          ```
+          ```
+          # sort_squence.py
+          order = [line.strip() for line in open('order.txt')]
+          lines = [line for line in open('bosTau9.refGene_noUN.gtf')]
+
+          def sort_key(line):
+            fields = line.split('\t')
+            try:
+              return order.index(fields[0])
+            except ValueError:
+              return -1
+
+          sorted_lines = sorted(lines, key=sort_key)
+
+          with open('bosTau9.refGene_noUN_sorted.gtf', 'w') as f:
+            for line in sorted_lines:
+              f.write(line)
+          ```
+          ```
+          python sort_squence.py
+          cut -f1 bosTau9.refGene_noUN_sorted.gtf | uniq
+          ```
+          The two files are in the same sequence now
+          
           
 ## HPC Data Processing
    1. Get the Sequence result from Novogene
