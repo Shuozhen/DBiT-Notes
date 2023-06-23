@@ -206,8 +206,8 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
           ```
           Delete the original two folders for STARindex and STARindex_nc and rebuild the STAR using bosTau9_noUn.fa and Bos_taurus.ARS-UCD1.2.109.chr.gtf
         - Still not running well, change the genome file to Bos_taurus.ARS-UCD1.2.dna.toplevel.fa
-      - Still not going well, after consult with Mingyu, here's the takeaway
-        - Use the UCSC paired annotation and raw data
+      - Still not going well, after consult with Mingyu, here's the takeaway (2023/06/23)
+        - Use the UCSC paired annotation and raw data - the annotation is the most clean
           - gtf file is inside the gene/ folder
           - Use the bosTau9.refGene.gtf
           - Use the bosTau9.fa
@@ -245,6 +245,7 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
           cut -f1 bosTau9.refGene_noUN_sorted.gtf | uniq
           ```
           The two files are in the same sequence now
+        - The lncRNA.fa is using the Ensembl because there's no relating file in UCSC
           
           
 ## HPC Data Processing
