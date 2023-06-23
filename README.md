@@ -606,7 +606,8 @@ install.packages("/gpfs/ycga/project/fan/sb2723/00.software/seurat.tar.gz",repos
  - Somehow the clusterProfiler was not installed correctly
  Reinstall lead to the biocmanager upgrade, unknown factor
  raster is not be able to be loaded because 
-```configure: error: GDALAllRegister not found in libgdal```
+ configure: error: GDALAllRegister not found in libgdal
+```
  - Install jamba
  ```
  install.packages("remotes")
