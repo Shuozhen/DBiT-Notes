@@ -643,15 +643,19 @@ Jupyter notebook code from: https://github.com/dyxmvp/Spatial_ATAC-seq
  pip install magic-impute
  ```
  <img width="2560" alt="image" src="https://user-images.githubusercontent.com/25277637/219793180-6951af12-67cc-4c75-bc17-4dd5ab87fb5b.png">
+ 
  ```
  mamba install cmake r-devtools
  ```
+
  <img width="2560" alt="image" src="https://user-images.githubusercontent.com/25277637/219794369-507bbe34-5fea-49f8-8c73-e217ebf99bc0.png">
  - Install R magic using the source https://github.com/cran/Rmagic#installation, not doable in R interface
    - Install the dependency reticulate first (using my memory to recall r-reticulate)
+ 
  ```
  mamba install r-reticulate
  ```
+
  ```
  git clone https://github.com/KrishnaswamyLab/MAGIC
  cd MAGIC/python
@@ -692,9 +696,10 @@ install.packages("/gpfs/ycga/project/fan/sb2723/00.software/seurat.tar.gz",repos
 ```
  - Somehow the clusterProfiler was not installed correctly
  Reinstall lead to the biocmanager upgrade, unknown factor
- raster is not be able to be loaded because 
+ raster is not be able to be loaded because
+ ```
  configure: error: GDALAllRegister not found in libgdal
-```
+ ```
  - Install jamba
  ```
  install.packages("remotes")
