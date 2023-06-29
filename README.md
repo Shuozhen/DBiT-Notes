@@ -12,6 +12,7 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
        - [Ai manual selection & jupyter notebook code](#Ai-manual-selection-&-jupyter-notebook-code)
 4. [Data Visualization](#Imaging-Analysis)
 5. [Other stuffs](#Other-stuffs)
+6. [Log for Installment and environmental setting](#Log-for-Installment-and-environmental-setting)
    
 
 ## DBiT work flow 
