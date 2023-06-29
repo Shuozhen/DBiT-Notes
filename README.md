@@ -259,6 +259,8 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
           ```
           The two files are in the same sequence now
         - The lncRNA.fa is using the Ensembl because there's no relating file in UCSC
+      - The original sorted.gtf still had some gene not well sorted, therefore, it lead to the huge redundancy of the expression matrix. (Mingyu figured out the issue)
+        Try the code below and rerun the STAR and st-pipeline. (finger crossed)
           
           
 ## HPC
