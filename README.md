@@ -8,7 +8,7 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
 3. [Raw Image Processing](#Raw-Image-Processing)
    - [Using PS & Matlab](#Using-PS-Matlab)
    - [Using Ai and SVG](#Using-Ai-and-SVG)
-       - [Shell & Perl Script for pos.txt](#Shell-Perl-Script-for-pos-txt)
+       - [Shell & Perl Script for pos.txt](#Shell-Perl-Script)
        - [Ai manual selection & jupyter notebook code](#Ai-manual-selection)
 4. [Data Visualization](#Imaging-Analysis)
 5. [Other stuffs](#Other-stuffs)
@@ -328,7 +328,7 @@ Dr. Yang Liu's Github: https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/
    3. Use Image -> Adjustment -> Invert
    4. Use the Matlab script _Pixel_identification.m_ to generate position information
 ### Using Ai and SVG
-#### Shell & Perl Script for pos.txt
+#### Shell & Perl Script
    1. Use _qa.pl_ file to generate the SVG file (position information) of the original file
       - Load the Perl environment first
       ```
