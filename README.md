@@ -3,18 +3,19 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
 **High-Spatial-Resolution Multi-Omics Sequencing via Deterministic Barcoding in Tissue** https://doi.org/10.1016/j.cell.2020.10.026
 
 ## Table of Contents
-1. [DBiT Work Flow](##Workflow)
-2. [HPC Data Processing](##HPC)
-3. [Raw Image Processing](##RawImage)
-   - [Using PS & Matlab](###PS)
-   - [Using Ai and SVG](#Ai)
-       - [Shell & Perl Script for pos.txt](####Shell)
-       - [Ai manual selection & jupyter notebook code](####python)
-5. [Other stuffs](##Other)
+1. [DBiT Work Flow](#DBiT_work_flow)
+2. [HPC Data Processing](#HPC)
+3. [Raw Image Processing](#Raw_Image_Processing)
+   - [Using PS & Matlab](#Using_PS_&_Matlab)
+   - [Using Ai and SVG](#Using_Ai_and_SVG)
+       - [Shell & Perl Script for pos.txt](#Shell_&_Perl_Script_for_pos.txt)
+       - [Ai manual selection & jupyter notebook code](#Ai_manual_selection_&_jupyter_notebook_code)
+4. [Data Visulization](#Imaging_Analysis)
+5. [Other stuffs](##Other_stuffs)
    
 
-## Workflow
-DBiT work flow (don't redo this part unless to set up a new environment, at least effective at 2022/05/04)
+## DBiT work flow 
+**Don't redo this part unless to set up a new environment, at least effective at 2022/05/04)**
   1. Experiments on tissue samples;
      - Sample thickness < 10 um;
      - 50 * 50 barcodes;
@@ -318,7 +319,7 @@ DBiT work flow (don't redo this part unless to set up a new environment, at leas
    conda activate st-pipeline
    sbatch submit.sh 00.batch_stpipeline
    ```
-## RawImage 
+## Raw Image Processing
 ### Using PS & Matlab
 Dr. Yang Liu's Github: https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel_identification.m
    1. Crop the image using PS
