@@ -4,8 +4,8 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
 
 ## Table of Contents
 1. [DBiT Work Flow](##Workflow)
-2. [HPC Data Processing](## HPC Data Processing, including ST pipeline)
-3. [Raw Image Processing](## Raw Image Processing )
+2. [HPC Data Processing](##HPC)
+3. [Raw Image Processing](##RawImage)
    [Using PS & Matlab](### Using PS & Matlab)
    [Using Ai and SVG](### Using Ai and SVG)
        [Shell & Perl Script for pos.txt](#### Shell & Perl Script for pos.txt)
@@ -14,7 +14,8 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
    [HPC Work Commands](### HPC Work Commands)
    
 
-## DBiT work flow (don't redo this part unless to set up a new environment, at least effective at 2022/05/04)
+## Workflow
+DBiT work flow (don't redo this part unless to set up a new environment, at least effective at 2022/05/04)
   1. Experiments on tissue samples;
      - Sample thickness < 10 um;
      - 50 * 50 barcodes;
@@ -259,7 +260,7 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
         - The lncRNA.fa is using the Ensembl because there's no relating file in UCSC
           
           
-## HPC Data Processing
+## HPC
    1. Get the Sequence result from Novogene
       - Check the library QC report.
         - Copy the ![image](https://user-images.githubusercontent.com/25277637/152657283-475b4575-fe49-41ac-8979-a2cfa375c31b.png) into the excel file named "Sample QC Overall"
@@ -318,7 +319,7 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
    conda activate st-pipeline
    sbatch submit.sh 00.batch_stpipeline
    ```
-## Raw Image Processing 
+## RawImage 
 ### Using PS & Matlab
 Dr. Yang Liu's Github: https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel_identification.m
    1. Crop the image using PS
