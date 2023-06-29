@@ -6,7 +6,7 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
 1. [DBiT Work Flow](#DBiT-work-flow)
 2. [HPC Data Processing](#HPC)
 3. [Raw Image Processing](#Raw-Image-Processing)
-   - [Using PS & Matlab](#Using-PS-Matlab)
+   - [Using PS & Matlab](#Using-PS)
    - [Using Ai and SVG](#Using-Ai-and-SVG)
        - [Shell & Perl Script for pos.txt](#Shell-Perl-Script)
        - [Ai manual selection & jupyter notebook code](#Ai-manual-selection)
@@ -321,7 +321,7 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
    sbatch submit.sh 00.batch_stpipeline
    ```
 ## Raw Image Processing
-### Using PS & Matlab
+### Using PS
 Dr. Yang Liu's Github: https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel_identification.m
    1. Crop the image using PS
    2. Use Image -> Adjustment -> Threshold
