@@ -10,7 +10,7 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
    - [Using Ai and SVG](#Using_Ai_and_SVG)
        - [Shell & Perl Script for pos.txt](#Shell_&_Perl_Script_for_pos.txt)
        - [Ai manual selection & jupyter notebook code](#Ai_manual_selection_&_jupyter_notebook_code)
-4. [Data Visulization](#Imaging_Analysis)
+4. [Data Visualization](#Imaging_Analysis)
 5. [Other stuffs](##Other_stuffs)
    
 
