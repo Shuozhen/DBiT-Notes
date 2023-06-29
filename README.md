@@ -8,7 +8,7 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
 3. [Raw Image Processing](#Raw-Image-Processing)
    - [Using PS & Matlab](#Using-PS-Matlab)
    - [Using Ai and SVG](#Using-Ai-and-SVG)
-       - [Shell & Perl Script for pos.txt](#Shell-Perl-Script-for-pos.txt)
+       - [Shell & Perl Script for pos.txt](#Shell-Perl-Script-for-postxt)
        - [Ai manual selection & jupyter notebook code](#Ai-manual-selection)
 4. [Data Visualization](#Imaging-Analysis)
 5. [Other stuffs](#Other-stuffs)
