@@ -3,7 +3,7 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
 **High-Spatial-Resolution Multi-Omics Sequencing via Deterministic Barcoding in Tissue** https://doi.org/10.1016/j.cell.2020.10.026
 
 ## Table of Contents
-1. [DBiT Work Flow](#DBiT_work_flow)
+1. [DBiT Work Flow](#DBiT-work-flow)
 2. [HPC Data Processing](#HPC)
 3. [Raw Image Processing](#Raw_Image_Processing)
    - [Using PS & Matlab](#Using_PS_&_Matlab)
@@ -14,7 +14,7 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
 5. [Other stuffs](##Other_stuffs)
    
 
-## DBiT_work_flow 
+## DBiT work flow 
 **Don't redo this part unless to set up a new environment, at least effective at 2022/05/04)**
   1. Experiments on tissue samples;
      - Sample thickness < 10 um;
