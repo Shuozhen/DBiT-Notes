@@ -14,7 +14,7 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
 5. [Other stuffs](##Other_stuffs)
    
 
-## DBiT work flow 
+## DBiT_work_flow 
 **Don't redo this part unless to set up a new environment, at least effective at 2022/05/04)**
   1. Experiments on tissue samples;
      - Sample thickness < 10 um;
