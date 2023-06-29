@@ -8,10 +8,9 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
 3. [Raw Image Processing](##RawImage)
    [Using PS & Matlab](### Using PS & Matlab)
    [Using Ai and SVG](### Using Ai and SVG)
-       [Shell & Perl Script for pos.txt](#### Shell & Perl Script for pos.txt)
-       [Ai manual selection & jupyter notebook code](#### Ai manual selection & jupyter notebook code)
-5. [Other stuffs](## Other stuffs)
-   [HPC Work Commands](### HPC Work Commands)
+       [Shell & Perl Script for pos.txt](####Shell)
+       [Ai manual selection & jupyter notebook code](####python)
+5. [Other stuffs](##Other)
    
 
 ## Workflow
