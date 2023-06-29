@@ -5,13 +5,13 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
 ## Table of Contents
 1. [DBiT Work Flow](#DBiT-work-flow)
 2. [HPC Data Processing](#HPC)
-3. [Raw Image Processing](#Raw_Image_Processing)
-   - [Using PS & Matlab](#Using_PS_&_Matlab)
-   - [Using Ai and SVG](#Using_Ai_and_SVG)
-       - [Shell & Perl Script for pos.txt](#Shell_&_Perl_Script_for_pos.txt)
-       - [Ai manual selection & jupyter notebook code](#Ai_manual_selection_&_jupyter_notebook_code)
-4. [Data Visualization](#Imaging_Analysis)
-5. [Other stuffs](##Other_stuffs)
+3. [Raw Image Processing](#Raw-Image-Processing)
+   - [Using PS & Matlab](#Using-PS-&-Matlab)
+   - [Using Ai and SVG](#Using-Ai-and-SVG)
+       - [Shell & Perl Script for pos.txt](#Shell-&-Perl-Script-for-pos.txt)
+       - [Ai manual selection & jupyter notebook code](#Ai-manual-selection-&-jupyter-notebook-code)
+4. [Data Visualization](#Imaging-Analysis)
+5. [Other stuffs](##Other-stuffs)
    
 
 ## DBiT work flow 
