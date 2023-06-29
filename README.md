@@ -1,7 +1,18 @@
 # DBiT-Notes
 Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang-Yale/DBiT-seq.
-
 **High-Spatial-Resolution Multi-Omics Sequencing via Deterministic Barcoding in Tissue** https://doi.org/10.1016/j.cell.2020.10.026
+
+## Table of Contents
+1. [DBiT Work Flow](## DBiT work flow (don't redo this part unless to set up a new environment, at least effective at 2022/05/04))
+2. [HPC Data Processing](## HPC Data Processing, including ST pipeline)
+3. [Raw Image Processing](## Raw Image Processing )
+   [Using PS & Matlab](### Using PS & Matlab)
+   [Using Ai and SVG](### Using Ai and SVG)
+       [Shell & Perl Script for pos.txt](#### Shell & Perl Script for pos.txt)
+       [Ai manual selection & jupyter notebook code](#### Ai manual selection & jupyter notebook code)
+5. [Other stuffs](## Other stuffs)
+   [HPC Work Commands](### HPC Work Commands)
+   
 
 ## DBiT work flow (don't redo this part unless to set up a new environment, at least effective at 2022/05/04)
   1. Experiments on tissue samples;
@@ -308,7 +319,7 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
    sbatch submit.sh 00.batch_stpipeline
    ```
 ## Raw Image Processing 
-### Using PS
+### Using PS & Matlab
 Dr. Yang Liu's Github: https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/Figure_Processing/Pixel_identification.m
    1. Crop the image using PS
    2. Use Image -> Adjustment -> Threshold
@@ -411,9 +422,9 @@ Jupyter notebook code from: https://github.com/dyxmvp/Spatial_ATAC-seq
   "gridExtra", "tidyr", "raster", "ggpubr", "BuenColors", 
   "yarrr", "plyr", "knitr", "imager", "viridis", 
   "kableExtra", "tibble", "DOSE", "STdeconvolve"
-)
+  )
   install.packages(packages)
-  # Replace the seurat
+  /Replace the seurat
   install.packages("YOURPATH/spatstat.core_1.65-0.tar.gz")
   install.packages("YOURPATH/seurat.tar.gz")
   BiocManager::install(c("org.Hs.eg.db", "clusterProfiler", "org.Mm.eg.db", "enrichplot"))
@@ -421,9 +432,9 @@ Jupyter notebook code from: https://github.com/dyxmvp/Spatial_ATAC-seq
   reticulate::py_install("magic")
   ```
 - To use Rmagic we need to use the correct python environment (which is under current conda environment)
-```
-reticulate::use_python("/path/to/python")
-```
+  ```
+  reticulate::use_python("/path/to/python")
+  ```
 
 ### Python
 
