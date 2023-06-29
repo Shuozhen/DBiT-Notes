@@ -11,7 +11,7 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
        - [Shell & Perl Script for pos.txt](#Shell-&-Perl-Script-for-pos.txt)
        - [Ai manual selection & jupyter notebook code](#Ai-manual-selection-&-jupyter-notebook-code)
 4. [Data Visualization](#Imaging-Analysis)
-5. [Other stuffs](##Other-stuffs)
+5. [Other stuffs](#Other-stuffs)
    
 
 ## DBiT work flow 
