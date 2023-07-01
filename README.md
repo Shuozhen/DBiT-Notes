@@ -402,7 +402,7 @@ Jupyter notebook code from: https://github.com/dyxmvp/Spatial_ATAC-seq
        <img width="1358" alt="Screen Shot 2023-06-28 at 10 04 19 PM" src="https://github.com/Shuozhen/DBiT-Notes/assets/25277637/4da9a33e-6290-4d71-a381-9747696da985">
    17. Recover the background layer by ctrl+Z, delete the spot layer and save the underlying tissue ("Export" - "Save for screen"), the name of it is "tissue_under_spots.png"
        ![tissue_under_spots](https://github.com/Shuozhen/DBiT-Notes/assets/25277637/af544d83-7269-4c42-8d64-776b1cf7c0aa)
-   19. Use the jupyther notebook code to generate the contents inside the "spatial" folder
+   19. Use the jupyter notebook code to generate the contents inside the "spatial" folder
 
 
 ## Imaging Analysis
