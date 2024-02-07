@@ -71,7 +71,7 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
        make
        make install
        ```
-  5. STAR
+  5. STAR  
   Make the index of the reference on HPC
      - Once it's settled up, no need to change unless there's new sample or new updates
        - Current version of human gene reference (Farnam v39, Ruddle v40)
