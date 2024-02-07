@@ -4,7 +4,6 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
 
 ## Table of Contents
 1. [DBiT Work Flow](#DBiT-work-flow)
-   - [STAR Index](#5.STAR)
 2. [HPC Data Processing](#HPC)
 3. [Raw Image Processing](#Raw-Image-Processing)
    - [Using PS & Matlab](#Using-PS)
@@ -72,8 +71,8 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
        make
        make install
        ```
-  ## 5.STAR
-     Make the index of the reference on HPC
+  5. STAR
+  Make the index of the reference on HPC
      - Once it's settled up, no need to change unless there's new sample or new updates
        - Current version of human gene reference (Farnam v39, Ruddle v40)
        ```
