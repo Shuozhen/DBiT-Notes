@@ -744,3 +744,10 @@ install.packages("/gpfs/ycga/project/fan/sb2723/00.software/seurat.tar.gz",repos
  ```
  saveRDS(samp2,paste0(dir_out,sample,"_samp2.rds"))
  ```
+
+2024/03/01
+- Find software locally installed. if it's c programing built software
+```
+from ctypes import *
+cdll.LoadLibrary("/home/***/software/mybuild/lib64/libvips.so.42")
+```
