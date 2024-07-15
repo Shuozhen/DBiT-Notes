@@ -32,7 +32,7 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
        https://unix.stackexchange.com/questions/121716/unable-to-open-x-server
        https://unix.stackexchange.com/questions/31283/error-in-r-unable-to-open-connection-to-x11
      - Follow the instruction of ST Pipeline https://github.com/jfnavarro/st_pipeline
-     - Current procedure
+     - Past procedure (2022/05/04)
        ```
        module load miniconda
        conda create -n st-pipeline python=3.7
@@ -47,6 +47,17 @@ Learning notes for DBiT, credit to Dr. Mingyu Yang https://github.com/MingyuYang
        ```
        st_pipeline_run.py -h
        ```
+      - St-pipeline 1.8.2
+        ```
+        conda create st-pipeline_1.8.2 r-base r-essentials python=3.9 PySam Numpy Cython
+        conda install -c bioconda star samtools openssl=1.0
+        pip install taggd=0.3.6 
+        pip install tzdata pandas argparse invoke regex scikit-learn scipy sqlitedict matplotlib=3.4
+        stpipeline 1.8.2 requires , which is not installed.
+        tar -xzvf st_pipeline_1.8.2.tar.gz
+        python setup.py build
+        python setup.py install
+        ```
   4. Set up Perl environment on HPC, and run _effective.sh_ afterwards
        ```
        wget https://cpan.metacpan.org/authors/id/N/NW/NWCLARK/PerlIO-gzip-0.20.tar.gz
