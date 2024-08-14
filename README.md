@@ -385,7 +385,7 @@ Dr. Yang Liu's Github: https://github.com/edicliuyang/DBiT-seq_FFPE/blob/master/
       - Use python to change the svg-pos.txt to old position.txt format if necessary (https://blog.csdn.net/u013019701/article/details/104056898)
       - Go ahead to generate the result with the updated tsv file
 #### Ai manual selection
-Credit to Dr. Yanxiang Deng
+Credit to Dr. Yanxiang Deng  
 Jupyter notebook code from: https://github.com/dyxmvp/Spatial_ATAC-seq
    1. Open Adobe Illustrator, generate a artboard ~3000*3000 pixel;
    2. Import your image, and your overlaped ROI;
