@@ -539,6 +539,10 @@ Jupyter notebook code from: https://github.com/dyxmvp/Spatial_ATAC-seq
        ```
        :set nu
        ```
+   11. Extract the first column before comma in csv and compare files
+       ```
+       diff <(awk -F, '{print $1}' file1) <(awk -F, '{print $1}' file2)
+       ```
   ### R-related stuffs
    1. To check the capability of R
       ```
